@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using SmartTicket.Exceptions.Abstraction;
 
-namespace Authentication.Exceptions
+namespace AuthenticationService.Exceptions
 {
     public class RegisterException : SmartTicketValidationException
     {

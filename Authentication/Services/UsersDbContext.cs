@@ -1,9 +1,9 @@
-﻿using Authentication.Entities;
+﻿using AuthenticationService.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Authentication.Services
+namespace AuthenticationService.Services
 {
     public class UsersDbContext : IdentityDbContext<AppUser, IdentityRole, string>
     {

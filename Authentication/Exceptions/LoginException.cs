@@ -1,7 +1,6 @@
-﻿using Authentication.Exceptions;
-using SmartTicket.Exceptions.Abstraction;
+﻿using SmartTicket.Exceptions.Abstraction;
 
-namespace Authentication.User.Application.Exceptions
+namespace AuthenticationService.Exceptions
 {
     public class LoginException : AppException
     {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentication", "Authentication\Authentication.csproj", "{805662B3-8974-48C7-8E25-5C0E4517AF96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationService", "Authentication\AuthenticationService.csproj", "{805662B3-8974-48C7-8E25-5C0E4517AF96}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartTicket.Infrastructure", "BuildingBlock\SmartTicket.Infrastructure\SmartTicket.Infrastructure.csproj", "{B4B897F7-7960-4AEE-8FCC-BABC9A277CEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTicket.Core", "SmartTicket.Core\SmartTicket.Core.csproj", "{7F58A8C9-F5BC-4E5E-9B61-58DC8987C3C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomService", "RoomService\RoomService.csproj", "{BDB77109-646E-4A66-9F84-0540EA627B23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{7F58A8C9-F5BC-4E5E-9B61-58DC8987C3C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F58A8C9-F5BC-4E5E-9B61-58DC8987C3C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F58A8C9-F5BC-4E5E-9B61-58DC8987C3C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB77109-646E-4A66-9F84-0540EA627B23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB77109-646E-4A66-9F84-0540EA627B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB77109-646E-4A66-9F84-0540EA627B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB77109-646E-4A66-9F84-0540EA627B23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{0E05B2FD-1B2C-4792-8D5F-75058282F80B} = {F9D7F82C-F6D5-47F8-BECB-E42B013A96C6}
 		{B4B897F7-7960-4AEE-8FCC-BABC9A277CEF} = {F9D7F82C-F6D5-47F8-BECB-E42B013A96C6}
 		{7F58A8C9-F5BC-4E5E-9B61-58DC8987C3C4} = {F9D7F82C-F6D5-47F8-BECB-E42B013A96C6}
+		{BDB77109-646E-4A66-9F84-0540EA627B23} = {BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E627DB1E-A376-483C-AE15-3DBAA7FB83AB}

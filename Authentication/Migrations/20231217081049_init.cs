@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Authentication.Migrations
+namespace AuthenticationService.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration

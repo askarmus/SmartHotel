@@ -1,15 +1,15 @@
-﻿using Authentication.Commands.Register;
-using Authentication.Commands.Register.Requests;
-using Authentication.Queries;
-using Authentication.Queries.Login;
-using Authentication.Queries.Login.Requests;
-using Authentication.Queries.Login.Responses;
+﻿using AuthenticationService.CQRS.Commands.Register;
+using AuthenticationService.CQRS.Commands.Register.Requests;
+using AuthenticationService.CQRS.Queries.GetUserDetails;
+using AuthenticationService.CQRS.Queries.Login;
+using AuthenticationService.CQRS.Queries.Login.Requests;
+using AuthenticationService.CQRS.Queries.Login.Responses;
+using AuthenticationService.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ModularMonolith.User.Contracts;
 
 
-namespace Authentication.Controllers
+namespace AuthenticationService.Controllers
 {
     [ApiController]
     [Route("[controller]")]

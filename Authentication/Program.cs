@@ -1,16 +1,15 @@
-using Authentication.Commands.Register;
-using Authentication.Entities;
-using Authentication.Interfaces;
-using Authentication.Queries.GetUserDetails;
-using Authentication.Services;
+using AuthenticationService.CQRS.Queries.GetUserDetails;
+using AuthenticationService.Entities;
+using AuthenticationService.Services;
+using AuthenticationService.Services.JwtService;
+using AuthenticationService.Services.UserService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using ModularMonolith.User.Contracts;
-using System;
 using System.Reflection;
 using System.Text;
+using SmartTicket.Infrastructure.Logging; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,22 +18,15 @@ var connectionString = builder.Configuration.GetConnectionString("DbConnection")
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSwaggerGen();
 builder.Services.AddRouting(x => x.LowercaseUrls = true);
-
+builder.Host.UseSerilogLogger();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-
-
 builder.Services.AddDbContext<UsersDbContext>(x =>
 {
     x.UseSqlServer(connectionString);
 });
 builder.Services.AddIdentityCore<AppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<UsersDbContext>();
-
-
-
 builder.Services.AddScoped<IUserService, GetUserDetailsQueryHandler>();
-
 builder.Services.Configure<IdentityOptions>(options =>
 {
     // Password settings.

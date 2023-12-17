@@ -10,14 +10,12 @@ public class BaseDbContext : DbContext
 {
     private readonly IUserContext _userContext;
     
-    protected BaseDbContext(DbContextOptions options, IUserContext userContext)
-        : base(options)
+    protected BaseDbContext(DbContextOptions options, IUserContext userContext): base(options)
     {
         _userContext = userContext;
     }
     
-    protected BaseDbContext(DbContextOptions options)
-        : base(options)
+    protected BaseDbContext(DbContextOptions options): base(options)
     {
         
     }
