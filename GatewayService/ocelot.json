@@ -1,32 +1,106 @@
 ﻿{
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5003/"
+    "BaseUrl": "http://localhost:5267"
   },
   "Routes": [
+    //Booking
     {
-      "UpstreamPathTemplate": "/api/orders",
+      "UpstreamPathTemplate": "/api/RoomAvailability/GetRoomAvailability/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/RoomAvailability/GetRoomAvailability/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/RoomAvailability/GetRoomAvailabilitiesByDate",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/RoomAvailability/GetRoomAvailabilitiesByDate"
+    },
+    {
+      "UpstreamPathTemplate": "/api/RoomAvailability/CreateRoomAvailability",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5110
+          "Port": 5261
         }
       ],
-      "DownstreamPathTemplate": "/api/orders"
+      "DownstreamPathTemplate": "/api/RoomAvailability/CreateRoomAvailability"
+    },
+    {
+      "UpstreamPathTemplate": "/api/RoomAvailability/UpdateRoomAvailability",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/RoomAvailability/UpdateRoomAvailability"
+    },
+    {
+      "UpstreamPathTemplate": "/api/RoomAvailability/DeleteRoomAvailability",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/RoomAvailability/DeleteRoomAvailability"
     },
 
+    //Authendication
     {
-      "UpstreamPathTemplate": "/api/Account/Authenticate",
+      "UpstreamPathTemplate": "/api/users/login",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5220
+          "Port": 5115
         }
       ],
-      "DownstreamPathTemplate": "/api/Account/Authenticate"
+      "DownstreamPathTemplate": "/api/users/login"
+    },
+    {
+      "UpstreamPathTemplate": "/api/users/register",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5115
+        }
+      ],
+      "DownstreamPathTemplate": "/api/users/register"
+    },
+    {
+      "UpstreamPathTemplate": "/api/users/getuserdetails",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5115
+        }
+      ],
+      "DownstreamPathTemplate": "/api/users/getuserdetails"
     }
   ]
-}
+} 

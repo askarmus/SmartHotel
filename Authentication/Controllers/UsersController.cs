@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AuthenticationService.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -32,7 +32,6 @@ namespace AuthenticationService.Controllers
             return Ok(await _mediator.Send(new LoginQuery(request.UserName, request.Password)));
         }
 
-        [HttpPost]
         [HttpPost("register")]
         public async Task<ActionResult> Register(RegisterRequest request)
         {
@@ -42,7 +41,7 @@ namespace AuthenticationService.Controllers
         }
 
 
-        [HttpGet("{userId}")]
+        [HttpGet("GetUserDetails/{userId}")]
         public async Task<ActionResult<UserDto>> GetUserDetails(string userId, CancellationToken cancellationToken)
         {
             return Ok(await _mediator.Send(new GetUserDetailsQuery(userId), cancellationToken));

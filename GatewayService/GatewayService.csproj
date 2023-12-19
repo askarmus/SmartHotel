@@ -15,4 +15,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingBlock\SmartTicket.Infrastructure\SmartTicket.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

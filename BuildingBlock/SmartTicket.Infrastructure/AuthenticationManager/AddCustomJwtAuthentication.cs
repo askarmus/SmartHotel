@@ -9,7 +9,7 @@ namespace SmartTicket.Infrastructure.AuthenticationManager
 {
     public static class CustomJwtAuthExtension
     {
-        public static void AddCustomJwtAuthentication(this IServiceCollection services,  IConfiguration config)
+        public static void AddCustomJwtAuthentication(this IServiceCollection services,  string secret, string issuer)
         {
             //services.AddAuthentication(o =>
             //{
@@ -35,8 +35,8 @@ namespace SmartTicket.Infrastructure.AuthenticationManager
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(jwt =>
             {
-                var key = Encoding.ASCII.GetBytes(config["Jwt:Secret"]);
-                var issuer = config["Jwt:Issuer"];
+                var key = Encoding.ASCII.GetBytes("InFutureWeWillStoreThisInOtherPlaceAsHereItIsNotSecure");
+                
                 jwt.SaveToken = true;
                 jwt.TokenValidationParameters = new TokenValidationParameters
                 {
@@ -44,7 +44,7 @@ namespace SmartTicket.Infrastructure.AuthenticationManager
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = true,
                     ValidIssuer = issuer,
-                    ValidAudiences = new List<string>() { issuer },
+                    ValidAudiences = new List<string>() { "ModularMonolith.com" },
                     ValidateAudience = true,
                     RequireExpirationTime = false,
                     ValidateLifetime = true

@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using RoomService.CQRS.Commands;
 using RoomService.DTO;
 using RoomService.CQRS.Queries;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AvailabilityApi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class RoomAvailabilityController : ControllerBase

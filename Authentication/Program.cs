@@ -9,7 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using System.Text;
-using SmartTicket.Infrastructure.Logging; 
+using SmartTicket.Infrastructure.Logging;
+using static SmartTicket.Infrastructure.AuthenticationManager.CustomJwtAuthExtension;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,29 +49,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = false;
 });
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(jwt =>
-{
-    var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Secret"]);
-    var issuer = builder.Configuration["Jwt:Issuer"];
-    jwt.SaveToken = true;
-    jwt.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        ValidateIssuer = true,
-        ValidIssuer = issuer,
-        ValidAudiences = new List<string>() { issuer },
-        ValidateAudience = true,
-        RequireExpirationTime = false,
-        ValidateLifetime = true
-    };
-});
-
+builder.Services.AddCustomJwtAuthentication(builder.Configuration["Jwt:Secret"], builder.Configuration["Jwt:Issuer"]);
 
 builder.Services.AddScoped<IJwtService, JwtService>();
 
