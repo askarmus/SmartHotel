@@ -16,16 +16,19 @@ namespace AuthenticationService.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly ILogger<UsersController> _logger;
 
-        public UsersController(IMediator mediator)
+        public UsersController(IMediator mediator, ILogger<UsersController> logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
 
 
         [HttpPost("LogIn")]
         public async Task<ActionResult<LoginResponse>> LogIn(LoginRequest request)
         {
+            _logger.LogInformation("LogIn from UsersController called");
             return Ok(await _mediator.Send(new LoginQuery(request.UserName, request.Password)));
         }
 

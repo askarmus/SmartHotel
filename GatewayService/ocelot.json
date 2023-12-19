@@ -1,0 +1,32 @@
+﻿{
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5003/"
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/api/orders",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5110
+        }
+      ],
+      "DownstreamPathTemplate": "/api/orders"
+    },
+
+    {
+      "UpstreamPathTemplate": "/api/Account/Authenticate",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5220
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Account/Authenticate"
+    }
+  ]
+}
