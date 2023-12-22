@@ -3,12 +3,9 @@ using AuthenticationService.Entities;
 using AuthenticationService.Services;
 using AuthenticationService.Services.JwtService;
 using AuthenticationService.Services.UserService;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
-using System.Text;
 using SmartTicket.Infrastructure.Logging;
 using static SmartTicket.Infrastructure.AuthenticationManager.CustomJwtAuthExtension;
 

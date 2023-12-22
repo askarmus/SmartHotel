@@ -3,7 +3,22 @@
     "BaseUrl": "http://localhost:5267"
   },
   "Routes": [
+
     //Booking
+    {
+      "UpstreamPathTemplate": "/api/Booking/CreateBooking",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5081
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Booking/CreateBooking"
+    },
+
+    //Room Availability
     {
       "UpstreamPathTemplate": "/api/RoomAvailability/GetRoomAvailability/{id}",
       "UpstreamHttpMethod": [ "Get" ],
@@ -101,6 +116,20 @@
         }
       ],
       "DownstreamPathTemplate": "/api/users/getuserdetails"
+    },
+
+    //Payment
+    {
+      "UpstreamPathTemplate": "/api/Payment/ProcessPayment",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5245
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Payment/ProcessPayment"
     }
   ]
 } 

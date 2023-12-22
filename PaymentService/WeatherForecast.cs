@@ -1,4 +1,4 @@
-namespace Booking
+namespace PaymentService
 {
     public class WeatherForecast
     {

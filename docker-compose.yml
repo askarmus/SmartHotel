@@ -1,11 +1,11 @@
 version: '3.4'
 
 services:
-  authenticationservice:
-    image: ${DOCKER_REGISTRY-}authenticationservice
-    build:
-      context: .
-      dockerfile: Authentication/Dockerfile
+  # authenticationservice:
+  #   image: ${DOCKER_REGISTRY-}authenticationservice
+  #   build:
+  #     context: .
+  #     dockerfile: Authentication/Dockerfile
 
   seq-input-gelf:
     image: datalust/seq-input-gelf:latest
@@ -25,3 +25,12 @@ services:
     restart: unless-stopped
     volumes:
       - ./seq-data:/data
+
+  rabbitmq: # login guest:guest
+    image: rabbitmq:3-management
+    hostname: "rabbitmq"
+    labels:
+      NAME: "rabbitmq"
+    ports:
+    - "5672:5672"
+    - "15672:15672"
