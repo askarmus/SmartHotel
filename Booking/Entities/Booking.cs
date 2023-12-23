@@ -1,9 +1,11 @@
 ﻿using SmartTicket.Core;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookingService.Entities
 {
     public class Booking : BaseEntity
     {
+        [Key]
         public int BookingId { get; set; }
         public int UserId { get; set; }
         public int RoomId { get; set; }

@@ -1,14 +1,11 @@
-using BookingService.Consumers;
 using MassTransit;
-using Microsoft.Extensions.Configuration;
-using SmartTicket.Infrastructure.Config;
+using BookingService.Consumers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.Configure<RabbitMQConfig>(builder.Configuration.GetSection("RabbitMQ"));
 
 builder.Services.AddMassTransit(x =>
 {

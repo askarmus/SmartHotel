@@ -26,7 +26,7 @@ namespace BookingService.Controllers
             _publishEndpoint = publishEndpoint;
         }
 
-        [HttpGet("{bookingId}")]
+        [HttpGet("GetBooking/{bookingId}")]
         public async Task<IActionResult> GetBooking(int bookingId)
         {
             var result = await _mediator.Send(new GetBookingQuery { BookingId = bookingId });
@@ -40,7 +40,7 @@ namespace BookingService.Controllers
             return NotFound();
         }
 
-        [HttpPost("create")]
+        [HttpPost("CreateBooking")]
         public async Task<IActionResult> CreateBooking([FromBody] CreateBookingDto createBookingDto)
         {
             var bookingId = await _mediator.Send(new CreateBookingCommand
