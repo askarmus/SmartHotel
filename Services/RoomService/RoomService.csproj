@@ -32,8 +32,8 @@
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.3" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\BuildingBlock\SmartTicket.Exceptions.Abstraction\SmartTicket.Exceptions.Abstraction.csproj" />
-	  <ProjectReference Include="..\BuildingBlock\SmartTicket.Infrastructure\SmartTicket.Infrastructure.csproj" />
-	  <ProjectReference Include="..\SmartTicket.Core\SmartTicket.Core.csproj" />
+	  <ProjectReference Include="..\..\BuildingBlock\SmartTicket.Exceptions.Abstraction\SmartTicket.Exceptions.Abstraction.csproj" />
+	  <ProjectReference Include="..\..\BuildingBlock\SmartTicket.Infrastructure\SmartTicket.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\SmartTicket.Core\SmartTicket.Core.csproj" />
 	</ItemGroup>
 </Project>

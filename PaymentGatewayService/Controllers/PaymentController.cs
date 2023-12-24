@@ -12,8 +12,8 @@ namespace PaymentGatewayService.Controllers
             Declined
         }
 
-        [HttpPost("ProcessPayment")]
-        public async Task<IActionResult> ProcessPayment([FromBody] PaymentRequest request)
+        [HttpPost("Process")]
+        public async Task<IActionResult> Process([FromBody] PaymentRequest request)
         {
             Thread.Sleep(1000);
 

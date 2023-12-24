@@ -4,8 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>false</InvariantGlobalization>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="12.0.1" />
@@ -31,15 +30,16 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
 		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.0.3" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+		<PackageReference Include="Polly" Version="8.2.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.3" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\BuildingBlock\SmartTicket.Exceptions.Abstraction\SmartTicket.Exceptions.Abstraction.csproj" />
-	  <ProjectReference Include="..\BuildingBlock\SmartTicket.Infrastructure\SmartTicket.Infrastructure.csproj" />
-	  <ProjectReference Include="..\Service.Shared\Service.Shared.csproj" />
+		<ProjectReference Include="..\..\BuildingBlock\SmartTicket.Exceptions.Abstraction\SmartTicket.Exceptions.Abstraction.csproj" />
+		<ProjectReference Include="..\..\BuildingBlock\SmartTicket.Infrastructure\SmartTicket.Infrastructure.csproj" />
+		<ProjectReference Include="..\..\Service.Shared\Service.Shared.csproj" />
 	</ItemGroup>
 
 </Project>

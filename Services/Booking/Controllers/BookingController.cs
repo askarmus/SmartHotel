@@ -53,6 +53,8 @@ namespace BookingService.Controllers
 
             await _publishEndpoint.Publish(new BookingCreatedEvent
             {
+                CreditCardNumber = createBookingDto.CreditCardNumber,
+                Amount = createBookingDto.Amount,
                 BookingId = bookingId,
             });
 

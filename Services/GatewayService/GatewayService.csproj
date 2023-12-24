@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BuildingBlock\SmartTicket.Infrastructure\SmartTicket.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\BuildingBlock\SmartTicket.Infrastructure\SmartTicket.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

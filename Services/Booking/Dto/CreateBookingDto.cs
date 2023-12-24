@@ -4,6 +4,8 @@
     {
         public int UserId { get; set; }
         public int RoomId { get; set; }
+        public string CreditCardNumber { get; set; }
+        public decimal Amount { get; set; }
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
     }
