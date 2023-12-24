@@ -4,7 +4,7 @@
 
 This project demonstrates the implementation of a microservices-based booking system using .NET Core, MassTransit, and RabbitMQ. The system follows a saga pattern to orchestrate the workflow involving booking creation, payment processing, availability updates, and booking status updates.
 ## Tech Stack
-![techStack](doc/techStack.png)  
+![techStack](doc/techStack(1).png)  
 ## Features
 
 - **Booking Service:**
