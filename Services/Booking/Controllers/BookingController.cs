@@ -1,7 +1,6 @@
 using AutoMapper;
-using BookingService.CQRS.Commands;
-using BookingService.CQRS.Queries;
-using BookingService.Dto;
+using BookingService.CQRS.Commands.CreateRoom;
+using BookingService.CQRS.Queries.GetBooking;
 using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -16,13 +15,11 @@ namespace BookingService.Controllers
     public class BookingController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IMapper _mapper;
         private readonly IPublishEndpoint _publishEndpoint;
 
-        public BookingController(IMediator mediator, IMapper mapper, IPublishEndpoint publishEndpoint)
+        public BookingController(IMediator mediator, IPublishEndpoint publishEndpoint)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
-            _mapper = mapper;
             _publishEndpoint = publishEndpoint;
         }
 
@@ -31,30 +28,24 @@ namespace BookingService.Controllers
         {
             var result = await _mediator.Send(new GetBookingQuery { BookingId = bookingId });
 
-
-            if (result != null)
-            {
-                return Ok(_mapper.Map<BookingDto>(result));
-            }
-
-            return NotFound();
+            return Ok(result);
         }
 
         [HttpPost("CreateBooking")]
-        public async Task<IActionResult> CreateBooking([FromBody] CreateBookingDto createBookingDto)
+        public async Task<IActionResult> CreateBooking([FromBody] CreateBookingRequest request)
         {
             var bookingId = await _mediator.Send(new CreateBookingCommand
             {
-                UserId = createBookingDto.UserId,
-                RoomId = createBookingDto.RoomId,
-                CheckInDate = createBookingDto.CheckInDate,
-                CheckOutDate = createBookingDto.CheckOutDate
+                UserId = 10,
+                RoomId = request.RoomId,
+                CheckInDate = request.CheckInDate,
+                CheckOutDate = request.CheckOutDate
             });
 
             await _publishEndpoint.Publish(new BookingCreatedEvent
             {
-                CreditCardNumber = createBookingDto.CreditCardNumber,
-                Amount = createBookingDto.Amount,
+                CreditCardNumber = request.CreditCardNumber,
+                Amount = request.Amount,
                 BookingId = bookingId,
             });
 

@@ -41,5 +41,8 @@
 	  <ProjectReference Include="..\..\BuildingBlock\SmartTicket.Infrastructure\SmartTicket.Infrastructure.csproj" />
 	  <ProjectReference Include="..\..\Service.Shared\Service.Shared.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="AutoMapper\" />
+	</ItemGroup>
 
 </Project>

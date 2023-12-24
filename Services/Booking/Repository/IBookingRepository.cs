@@ -1,5 +1,4 @@
-﻿using BookingService.Dto;
-
+﻿
 namespace BookingService.Repository
 {
     public interface IBookingRepository

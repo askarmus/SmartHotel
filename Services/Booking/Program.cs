@@ -5,6 +5,7 @@ using BookingService.Repository;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using SmartTicket.Infrastructure.AuthenticationManager;
+using SmartTicket.Infrastructure.Exceptions;
 using SmartTicket.Infrastructure.Logging;
 using System.Reflection;
 
@@ -23,10 +24,10 @@ builder.Services.AddDbContext<BookingDbContext>(x =>
     x.UseSqlServer(connectionString);
 });
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
- 
-
 builder.Services.AddMassTransit(x =>
 {
+    x.AddConsumer<BookingStatusUpdateConsumer>();
+
     x.UsingRabbitMq((context, cfg) =>
     {
         cfg.Host(builder.Configuration["RabbitMQ:Host"], host =>
@@ -34,11 +35,17 @@ builder.Services.AddMassTransit(x =>
             host.Username(builder.Configuration["RabbitMQ:UserName"]);
             host.Password(builder.Configuration["RabbitMQ:Password"]);
         });
+        cfg.ReceiveEndpoint("order-queue", e =>
+        {
+            e.ConfigureConsumer<BookingStatusUpdateConsumer>(context);
+        });
     });
-    x.AddConsumer<BookingStatusUpdateConsumer>();
 });
 
+
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionLoggingMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {

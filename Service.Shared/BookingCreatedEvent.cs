@@ -9,7 +9,7 @@ namespace Service.Shared
     public class BookingCreatedEvent
     {
         public int BookingId { get; set; }
-        public string CreditCardNumber { get; set; }
-        public decimal Amount { get; set; }
+        public required string CreditCardNumber { get; set; }
+        public double Amount { get; set; }
     }
 }

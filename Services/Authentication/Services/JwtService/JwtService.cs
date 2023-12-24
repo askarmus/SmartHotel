@@ -23,7 +23,7 @@ namespace AuthenticationService.Services.JwtService
             var token = new JwtSecurityToken(_issuer,
                 _issuer,
                 claims,
-                expires: DateTime.Now.AddMinutes(120),
+                expires: DateTime.Now.AddDays(1000),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

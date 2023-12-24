@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace BookingService.CQRS.Commands
+namespace BookingService.CQRS.Commands.CreateRoom
 {
     public class CreateBookingCommand : IRequest<int>
     {

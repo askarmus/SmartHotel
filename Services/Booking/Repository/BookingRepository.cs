@@ -30,9 +30,34 @@ namespace BookingService.Repository
             return booking.BookingId;
         }
 
-        public Task UpdateBookingStatusAsync(Entities.Booking booking)
+        public async Task UpdateBookingStatusAsync(Entities.Booking booking)
         {
-            throw new NotImplementedException();
+            if (booking == null)
+            {
+                throw new ArgumentNullException(nameof(booking));
+            }
+
+            try
+            {
+                var existingBooking = await _context.Bookings.FindAsync(booking.BookingId);
+
+                if (existingBooking != null)
+                {
+                    existingBooking.BookingStatus = booking.BookingStatus;
+
+                    // Update other properties as needed
+
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Booking with ID {booking.BookingId} not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Failed to update booking status.", ex);
+            }
         }
     }
 }

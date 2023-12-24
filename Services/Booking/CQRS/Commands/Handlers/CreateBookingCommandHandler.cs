@@ -1,4 +1,4 @@
-﻿using BookingService.Dto;
+﻿using BookingService.CQRS.Commands.CreateRoom;
 using BookingService.Repository;
 using MediatR;
 
@@ -15,7 +15,6 @@ namespace BookingService.CQRS.Commands.Handlers
 
         public async Task<int> Handle(CreateBookingCommand createBookingDto, CancellationToken cancellationToken)
         {
-
             var booking = new Entities.Booking
             {
                 UserId = createBookingDto.UserId,

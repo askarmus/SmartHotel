@@ -8,10 +8,10 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Availability/Availability.csproj", "Availability/"]
-RUN dotnet restore "./Availability/./Availability.csproj"
+COPY ["Services/Availability/Availability.csproj", "Services/Availability/"]
+RUN dotnet restore "./Services/Availability/./Availability.csproj"
 COPY . .
-WORKDIR "/src/Availability"
+WORKDIR "/src/Services/Availability"
 RUN dotnet build "./Availability.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

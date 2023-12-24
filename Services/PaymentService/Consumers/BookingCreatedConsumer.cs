@@ -12,7 +12,7 @@ namespace BookingService.Consumers
     {
         public async Task Consume(ConsumeContext<BookingCreatedEvent> context)
         {
-            string apiUrl = "http://localhost:5245/payment/process";
+            string apiUrl = "http://localhost:5245/api/payment/process";
 
             try
             {
