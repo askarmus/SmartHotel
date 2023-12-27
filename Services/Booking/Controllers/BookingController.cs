@@ -1,13 +1,13 @@
-using AutoMapper;
-using BookingService.CQRS.Commands.CreateRoom;
-using BookingService.CQRS.Queries.GetBooking;
+using SmartHotel.BookingService.CQRS.Commands.CreateBooking;
+using SmartHotel.BookingService.CQRS.Commands.CreateBooking.Request;
+using SmartHotel.BookingService.CQRS.Queries.GetBooking;
 using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.Shared;
 
-namespace BookingService.Controllers
+namespace SmartHotel.BookingService.Controllers
 {
     [ApiController]
     [Authorize]
@@ -16,11 +16,13 @@ namespace BookingService.Controllers
     {
         private readonly IMediator _mediator;
         private readonly IPublishEndpoint _publishEndpoint;
+        private readonly IRequestClient<AvailabilityUpdatedEvent> _client;
 
-        public BookingController(IMediator mediator, IPublishEndpoint publishEndpoint)
+        public BookingController(IMediator mediator, IPublishEndpoint publishEndpoint, IRequestClient<AvailabilityUpdatedEvent> client)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
             _publishEndpoint = publishEndpoint;
+            _client = client;
         }
 
         [HttpGet("GetBooking/{bookingId}")]
@@ -34,22 +36,35 @@ namespace BookingService.Controllers
         [HttpPost("CreateBooking")]
         public async Task<IActionResult> CreateBooking([FromBody] CreateBookingRequest request)
         {
-            var bookingId = await _mediator.Send(new CreateBookingCommand
-            {
-                UserId = 10,
-                RoomId = request.RoomId,
-                CheckInDate = request.CheckInDate,
-                CheckOutDate = request.CheckOutDate
-            });
+            var response = await _client.GetResponse<AvailabilityUpdateResult>(new { request.RoomId , request.BookingDate });
 
-            await _publishEndpoint.Publish(new BookingCreatedEvent
-            {
-                CreditCardNumber = request.CreditCardNumber,
-                Amount = request.Amount,
-                BookingId = bookingId,
-            });
 
-            return Ok(bookingId);
+            if (response.Message.AvailabilityStatus ==  Service.Shared.Enum.AvailabilityStatus.Booked)
+            {
+                var bookingId = await _mediator.Send(new CreateBookingCommand
+                {
+                    UserId = 10,
+                    RoomId = request.RoomId,
+                    BookingDate = request.BookingDate,
+                    Amount = request.Amount,
+                    CreditCardNumber = request.CreditCardNumber,
+                });
+
+                await _publishEndpoint.Publish(new BookingCreatedEvent
+                {
+                    CreditCardNumber = request.CreditCardNumber,
+                    Amount = request.Amount,
+                    BookingId = bookingId,
+                });
+                
+                return Ok(bookingId);
+
+            } 
+            else
+            {
+                return BadRequest($"Booking is not avialbe for {request.BookingDate}");
+            }
+
         }
     }
 }

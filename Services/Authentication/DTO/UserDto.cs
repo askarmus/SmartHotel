@@ -1,4 +1,4 @@
-﻿namespace AuthenticationService.DTO
+﻿namespace SmartHotel.AuthenticationService.DTO
 {
     public class UserDto
     {

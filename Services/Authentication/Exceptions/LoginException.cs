@@ -1,6 +1,6 @@
-﻿using SmartTicket.Exceptions.Abstraction;
+﻿using SmartHotel.Exceptions.Abstraction;
 
-namespace AuthenticationService.Exceptions
+namespace SmartHotel.AuthenticationService.Exceptions
 {
     public class LoginException : AppException
     {

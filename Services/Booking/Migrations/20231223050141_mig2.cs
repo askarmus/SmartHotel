@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace BookingService.Migrations
+namespace SmartHotel.BookingService.Migrations
 {
     /// <inheritdoc />
     public partial class mig2 : Migration

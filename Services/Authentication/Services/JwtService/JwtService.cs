@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-namespace AuthenticationService.Services.JwtService
+namespace SmartHotel.AuthenticationService.Services.JwtService
 {
     public class JwtService : IJwtService
     {

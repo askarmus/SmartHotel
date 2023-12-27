@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace PaymentGatewayService.Controllers
+namespace FakePaymentGatewayService.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

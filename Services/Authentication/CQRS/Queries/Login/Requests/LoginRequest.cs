@@ -1,4 +1,4 @@
-﻿namespace AuthenticationService.CQRS.Queries.Login.Requests
+﻿namespace SmartHotel.AuthenticationService.CQRS.Queries.Login.Requests
 {
     public class LoginRequest
     {

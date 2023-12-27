@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace SmartTicket.Infrastructure.Utility;
+namespace SmartHotel.Infrastructure.Utility;
 
 public class HttpClientService
 {

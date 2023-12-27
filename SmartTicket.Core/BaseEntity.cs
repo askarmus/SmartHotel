@@ -1,4 +1,4 @@
-﻿namespace SmartTicket.Core
+﻿namespace SmartHotel.Core
 {
     public class BaseEntity
     {

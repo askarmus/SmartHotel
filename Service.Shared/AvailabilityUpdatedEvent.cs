@@ -9,7 +9,7 @@ namespace Service.Shared
 {
     public class AvailabilityUpdatedEvent
     {
-        public int BookingId { get; set; }
-        public AvailabilityStatus AvailabilityStatus { get; set; }
+        public int RoomId { get; set; }
+        public DateTime BookingDate { get; set; }
     }
 }

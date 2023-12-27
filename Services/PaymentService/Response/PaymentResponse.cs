@@ -1,6 +1,6 @@
 ﻿using Service.Shared.Enum;
 
-namespace PaymentService.Response
+namespace SmartHotel. PaymentService.Response
 {
     public class PaymentResponse
     {

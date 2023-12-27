@@ -1,26 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RoomService.Entityty;
-using SmartTicket.Infrastructure.Persistence;
-using SmartTicket.Infrastructure.Services;
+using SmartHotel.Infrastructure.Persistence;
 
-namespace RoomService.Data
+namespace BookingService.Data
 {
     public class RoomDbContext : BaseDbContext
     {
-        public RoomDbContext(DbContextOptions<RoomDbContext> options, IUserContext userContext) : base(options, userContext)
-        {
-        }
+        public DbSet<RoomAvailability> RoomAvailability { get; set; }
 
         public RoomDbContext(DbContextOptions<RoomDbContext> options) : base(options)
         {
         }
 
-        public DbSet<RoomAvailability> RoomAvailabilities { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(RoomAvailability).Assembly);
-
+            // Configure relationships, constraints, etc.
         }
     }
 }

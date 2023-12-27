@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace AuthenticationService.Entities
+namespace SmartHotel.AuthenticationService.Entities
 {
     public class AppUser : IdentityUser
     {

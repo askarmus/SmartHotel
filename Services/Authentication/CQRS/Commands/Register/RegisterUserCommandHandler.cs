@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
-using AuthenticationService.Entities;
-using AuthenticationService.Exceptions;
+using SmartHotel.AuthenticationService.Entities;
+using SmartHotel.AuthenticationService.Exceptions;
 
-namespace AuthenticationService.CQRS.Commands.Register
+namespace SmartHotel.AuthenticationService.CQRS.Commands.Register
 {
     public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand>
     {

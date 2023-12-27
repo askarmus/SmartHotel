@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SmartTicket.Exceptions.Abstraction
+namespace SmartHotel.Exceptions.Abstraction
 {
     public abstract class DomainException : Exception
     {

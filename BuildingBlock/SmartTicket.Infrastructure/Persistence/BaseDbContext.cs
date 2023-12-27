@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using SmartTicket.Core;
-using SmartTicket.Infrastructure.Services;
+using SmartHotel.Core;
+using SmartHotel.Infrastructure.Services;
 
-namespace SmartTicket.Infrastructure.Persistence;
+namespace SmartHotel.Infrastructure.Persistence;
 
 public class BaseDbContext : DbContext
 {

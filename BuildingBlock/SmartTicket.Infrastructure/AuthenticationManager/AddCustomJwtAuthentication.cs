@@ -5,7 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SmartTicket.Infrastructure.AuthenticationManager
+namespace SmartHotel.Infrastructure.AuthenticationManager
 {
     public static class CustomJwtAuthExtension
     {

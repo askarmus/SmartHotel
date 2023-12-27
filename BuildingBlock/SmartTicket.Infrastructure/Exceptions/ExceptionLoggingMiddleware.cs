@@ -6,9 +6,9 @@ using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
 using FluentValidation;
-using SmartTicket.Exceptions.Abstraction;
+using SmartHotel.Exceptions.Abstraction;
 
-namespace SmartTicket.Infrastructure.Exceptions
+namespace SmartHotel.Infrastructure.Exceptions
 {
     public class ExceptionLoggingMiddleware
     {

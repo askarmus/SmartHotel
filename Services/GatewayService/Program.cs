@@ -1,6 +1,6 @@
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
-using static SmartTicket.Infrastructure.AuthenticationManager.CustomJwtAuthExtension;
+using static SmartHotel.Infrastructure.AuthenticationManager.CustomJwtAuthExtension;
 
 
 var builder = WebApplication.CreateBuilder(args);

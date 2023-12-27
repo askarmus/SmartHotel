@@ -1,10 +1,10 @@
 ﻿using MassTransit;
-using PaymentService.Response;
+using SmartHotel.PaymentService.Response;
 using Polly;
 using Serilog;
 using Service.Shared;
 using Service.Shared.Enum;
-using SmartTicket.Infrastructure.Utility;
+using SmartHotel.Infrastructure.Utility;
 
 namespace BookingService.Consumers
 {

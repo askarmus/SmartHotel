@@ -2,8 +2,8 @@
 {
     public enum AvailabilityStatus
     {
-        Success,
-        Confirmed,
+        Booked,
         Cancelled,
+        AlreadyBooked,
     }
 }

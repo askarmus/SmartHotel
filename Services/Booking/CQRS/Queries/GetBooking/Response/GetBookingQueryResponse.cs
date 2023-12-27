@@ -1,22 +1,20 @@
-﻿using BookingService.Entities;
+﻿using SmartHotel.BookingService.Entities;
 
-namespace BookingService.CQRS.Queries.GetBooking.Response
+namespace SmartHotel.BookingService.CQRS.Queries.GetBooking.Response
 {
     public class GetBookingQueryResponse
     {
-        public GetBookingQueryResponse(int BookingId, int UserId, int RoomId, DateTime CheckInDate, DateTime CheckOutDate, BookingStatus BookingStatus)
+        public GetBookingQueryResponse(int BookingId, int UserId, int RoomId, DateTime BookingDate , BookingStatus BookingStatus)
         {
             BookingId = BookingId;
             UserId = UserId;
             RoomId = RoomId;
-            CheckInDate = CheckInDate;
-            CheckOutDate = CheckOutDate;
+            BookingDate = BookingDate;
             BookingStatus = BookingStatus;
         }
         public int BookingId { get; }
         public string UserId { get; }
-        public string CheckInDate { get; }
-        public string CheckOutDate { get; }
+        public string BookingDate { get; }
         public string Name { get; }
         public BookingStatus BookingStatus { get; }
     }

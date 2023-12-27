@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmartTicket.Infrastructure.Config
+namespace SmartHotel.Infrastructure.Config
 {
     public class RabbitMQConfig
     {

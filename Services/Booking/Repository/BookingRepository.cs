@@ -1,7 +1,7 @@
-﻿using BookingService.Data;
+﻿using SmartHotel.BookingService.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookingService.Repository
+namespace SmartHotel.BookingService.Repository
 {
     public class BookingRepository : IBookingRepository
     {

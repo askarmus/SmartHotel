@@ -1,4 +1,4 @@
-﻿namespace AuthenticationService.CQRS.Queries.Login.Responses
+﻿namespace SmartHotel.AuthenticationService.CQRS.Queries.Login.Responses
 {
     public class LoginResponse
     {

@@ -1,15 +1,15 @@
-﻿using AuthenticationService.CQRS.Commands.Register;
-using AuthenticationService.CQRS.Commands.Register.Requests;
-using AuthenticationService.CQRS.Queries.GetUserDetails;
-using AuthenticationService.CQRS.Queries.Login;
-using AuthenticationService.CQRS.Queries.Login.Requests;
-using AuthenticationService.CQRS.Queries.Login.Responses;
-using AuthenticationService.DTO;
+﻿using SmartHotel.AuthenticationService.CQRS.Commands.Register;
+using SmartHotel.AuthenticationService.CQRS.Commands.Register.Requests;
+using SmartHotel.AuthenticationService.CQRS.Queries.GetUserDetails;
+using SmartHotel.AuthenticationService.CQRS.Queries.Login;
+using SmartHotel.AuthenticationService.CQRS.Queries.Login.Requests;
+using SmartHotel.AuthenticationService.CQRS.Queries.Login.Responses;
+using SmartHotel.AuthenticationService.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace AuthenticationService.Controllers
+namespace SmartHotel.AuthenticationService.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

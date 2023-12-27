@@ -1,7 +1,7 @@
-﻿using AuthenticationService.DTO;
+﻿using SmartHotel.AuthenticationService.DTO;
 using MediatR;
 
-namespace AuthenticationService.CQRS.Queries.GetUserDetails
+namespace SmartHotel.AuthenticationService.CQRS.Queries.GetUserDetails
 {
     public class GetUserDetailsQuery : IRequest<UserDto>
     {

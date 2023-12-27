@@ -2,7 +2,7 @@
 using System.Linq;
 using FluentValidation.Results;
 
-namespace SmartTicket.Infrastructure.Exceptions
+namespace SmartHotel.Infrastructure.Exceptions
 {
     public class ErrorResponse
     {

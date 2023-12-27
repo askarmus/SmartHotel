@@ -1,6 +1,6 @@
-﻿using static PaymentGatewayService.Controllers.PaymentController;
+﻿using static FakePaymentGatewayService.Controllers.PaymentController;
 
-namespace PaymentGatewayService
+namespace FakePaymentGatewayService
 {
     public class PaymentResponse
     {

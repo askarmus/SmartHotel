@@ -1,7 +1,7 @@
-﻿using BookingService.CQRS.Queries.GetBooking.Response;
+﻿using SmartHotel.BookingService.CQRS.Queries.GetBooking.Response;
 using MediatR;
 
-namespace BookingService.CQRS.Queries.GetBooking
+namespace SmartHotel.BookingService.CQRS.Queries.GetBooking
 {
     public class GetBookingQuery : IRequest<GetBookingQueryResponse>
     {

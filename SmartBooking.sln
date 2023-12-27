@@ -7,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{BB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuldingBlocks", "BuldingBlocks", "{F9D7F82C-F6D5-47F8-BECB-E42B013A96C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartTicket.Exceptions.Abstraction", "BuildingBlock\SmartTicket.Exceptions.Abstraction\SmartTicket.Exceptions.Abstraction.csproj", "{0E05B2FD-1B2C-4792-8D5F-75058282F80B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel.Exceptions.Abstraction", "BuildingBlock\SmartTicket.Exceptions.Abstraction\SmartHotel.Exceptions.Abstraction.csproj", "{0E05B2FD-1B2C-4792-8D5F-75058282F80B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartTicket.Infrastructure", "BuildingBlock\SmartTicket.Infrastructure\SmartTicket.Infrastructure.csproj", "{B4B897F7-7960-4AEE-8FCC-BABC9A277CEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel.Infrastructure", "BuildingBlock\SmartTicket.Infrastructure\SmartHotel.Infrastructure.csproj", "{B4B897F7-7960-4AEE-8FCC-BABC9A277CEF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartTicket.Core", "SmartTicket.Core\SmartTicket.Core.csproj", "{7F58A8C9-F5BC-4E5E-9B61-58DC8987C3C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel.Core", "SmartTicket.Core\SmartHotel.Core.csproj", "{7F58A8C9-F5BC-4E5E-9B61-58DC8987C3C4}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8DB80E44-D370-4BDE-A123-2D3A5BA9C473}"
 EndProject
@@ -19,19 +19,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{BEB125
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Shared", "Service.Shared\Service.Shared.csproj", "{FA79FF1D-E818-4545-80B8-36A4CC4B0641}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationService", "Services\Authentication\AuthenticationService.csproj", "{93EF730A-0095-4F73-B69E-473248CCE656}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel.AuthenticationService", "Services\Authentication\SmartHotel.AuthenticationService.csproj", "{93EF730A-0095-4F73-B69E-473248CCE656}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Availability", "Services\Availability\Availability.csproj", "{2C1F70A7-DF33-4568-9F11-3F53B470ECD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel..BookingService", "Services\Booking\SmartHotel..BookingService.csproj", "{5B10BAC3-C1CA-4AF4-B842-6B0958FC202D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService", "Services\Booking\BookingService.csproj", "{5B10BAC3-C1CA-4AF4-B842-6B0958FC202D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel..GatewayService", "Services\GatewayService\SmartHotel..GatewayService.csproj", "{20280EF2-51CC-45B4-A2EA-9DB06BAA8029}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GatewayService", "Services\GatewayService\GatewayService.csproj", "{20280EF2-51CC-45B4-A2EA-9DB06BAA8029}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel.PaymentService", "Services\PaymentService\SmartHotel.PaymentService.csproj", "{1F72E39F-6538-4E59-8617-6F273A64A5A4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentService", "Services\PaymentService\PaymentService.csproj", "{1F72E39F-6538-4E59-8617-6F273A64A5A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FakePaymentGatewayService", "Services\PaymentGatewayService\FakePaymentGatewayService.csproj", "{7B1EDD62-2FDC-47A7-BD78-33FA509D9005}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoomService", "Services\RoomService\RoomService.csproj", "{8F7FCF01-D1E2-4523-BB9A-15D2694DD1D5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGatewayService", "Services\PaymentGatewayService\PaymentGatewayService.csproj", "{7B1EDD62-2FDC-47A7-BD78-33FA509D9005}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel.RoomService", "Services\RoomService\SmartHotel.RoomService.csproj", "{B9432CE6-9F59-40D2-AAE2-73F3E7B626B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,10 +61,6 @@ Global
 		{93EF730A-0095-4F73-B69E-473248CCE656}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93EF730A-0095-4F73-B69E-473248CCE656}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93EF730A-0095-4F73-B69E-473248CCE656}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C1F70A7-DF33-4568-9F11-3F53B470ECD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C1F70A7-DF33-4568-9F11-3F53B470ECD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C1F70A7-DF33-4568-9F11-3F53B470ECD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C1F70A7-DF33-4568-9F11-3F53B470ECD3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B10BAC3-C1CA-4AF4-B842-6B0958FC202D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B10BAC3-C1CA-4AF4-B842-6B0958FC202D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B10BAC3-C1CA-4AF4-B842-6B0958FC202D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -79,14 +73,14 @@ Global
 		{1F72E39F-6538-4E59-8617-6F273A64A5A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F72E39F-6538-4E59-8617-6F273A64A5A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F72E39F-6538-4E59-8617-6F273A64A5A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F7FCF01-D1E2-4523-BB9A-15D2694DD1D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F7FCF01-D1E2-4523-BB9A-15D2694DD1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F7FCF01-D1E2-4523-BB9A-15D2694DD1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F7FCF01-D1E2-4523-BB9A-15D2694DD1D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7B1EDD62-2FDC-47A7-BD78-33FA509D9005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7B1EDD62-2FDC-47A7-BD78-33FA509D9005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B1EDD62-2FDC-47A7-BD78-33FA509D9005}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B1EDD62-2FDC-47A7-BD78-33FA509D9005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9432CE6-9F59-40D2-AAE2-73F3E7B626B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9432CE6-9F59-40D2-AAE2-73F3E7B626B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9432CE6-9F59-40D2-AAE2-73F3E7B626B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9432CE6-9F59-40D2-AAE2-73F3E7B626B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,12 +92,11 @@ Global
 		{BEB12525-6CCB-4AF8-A0DB-A36935DCEB7B} = {BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}
 		{FA79FF1D-E818-4545-80B8-36A4CC4B0641} = {BEB12525-6CCB-4AF8-A0DB-A36935DCEB7B}
 		{93EF730A-0095-4F73-B69E-473248CCE656} = {BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}
-		{2C1F70A7-DF33-4568-9F11-3F53B470ECD3} = {BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}
 		{5B10BAC3-C1CA-4AF4-B842-6B0958FC202D} = {BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}
 		{20280EF2-51CC-45B4-A2EA-9DB06BAA8029} = {BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}
 		{1F72E39F-6538-4E59-8617-6F273A64A5A4} = {BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}
-		{8F7FCF01-D1E2-4523-BB9A-15D2694DD1D5} = {BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}
 		{7B1EDD62-2FDC-47A7-BD78-33FA509D9005} = {BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}
+		{B9432CE6-9F59-40D2-AAE2-73F3E7B626B4} = {BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E627DB1E-A376-483C-AE15-3DBAA7FB83AB}

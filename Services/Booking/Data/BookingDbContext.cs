@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SmartTicket.Infrastructure.Persistence;
+using SmartHotel.Infrastructure.Persistence;
 
-namespace BookingService.Data
+namespace SmartHotel.BookingService.Data
 {
     public class BookingDbContext : BaseDbContext
     {

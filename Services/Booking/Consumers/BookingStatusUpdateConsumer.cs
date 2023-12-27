@@ -1,9 +1,9 @@
-﻿using BookingService.Repository;
+﻿using SmartHotel.BookingService.Repository;
 using MassTransit;
 using Service.Shared;
 using Service.Shared.Enum;
 
-namespace BookingService.Consumers
+namespace SmartHotel.BookingService.Consumers
 {
     public class BookingStatusUpdateConsumer : IConsumer<BookingStatusUpdateEvent>
     {
@@ -27,7 +27,7 @@ namespace BookingService.Consumers
                 return;
             }
 
-            booking.BookingStatus = (paymentStatus == PaymentStatus.Success && availabilityStatus == AvailabilityStatus.Success)
+            booking.BookingStatus = (paymentStatus == PaymentStatus.Success)
                 ? BookingStatus.Confirmed
                 : BookingStatus.Cancelled;
 

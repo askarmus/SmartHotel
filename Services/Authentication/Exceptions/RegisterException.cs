@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Identity;
-using SmartTicket.Exceptions.Abstraction;
+using SmartHotel.Exceptions.Abstraction;
 
-namespace AuthenticationService.Exceptions
+namespace SmartHotel.AuthenticationService.Exceptions
 {
-    public class RegisterException : SmartTicketValidationException
+    public class RegisterException : SmartHotelValidationException
     {
         public RegisterException(IEnumerable<IdentityError> errors) : base("Unable to register account.", 102)
         {

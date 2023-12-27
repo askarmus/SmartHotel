@@ -1,12 +1,12 @@
 ﻿using System.Security.Claims;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
-using AuthenticationService.Exceptions;
-using AuthenticationService.Entities;
-using AuthenticationService.CQRS.Queries.Login.Responses;
-using AuthenticationService.Services.JwtService;
+using SmartHotel.AuthenticationService.Exceptions;
+using SmartHotel.AuthenticationService.Entities;
+using SmartHotel.AuthenticationService.CQRS.Queries.Login.Responses;
+using SmartHotel.AuthenticationService.Services.JwtService;
 
-namespace AuthenticationService.CQRS.Queries.Login
+namespace SmartHotel.AuthenticationService.CQRS.Queries.Login
 {
     public class LoginQueryHandler : IRequestHandler<LoginQuery, LoginResponse>
     {

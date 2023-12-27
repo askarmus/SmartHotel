@@ -1,29 +1,58 @@
+
+using BookingService.Consumers;
+using BookingService.Data;
+using BookingService.Repository;
+using FluentValidation;
+using MassTransit;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-using RoomService.Data;
-using RoomService.Repositories;
-using SmartTicket.Infrastructure.AuthenticationManager;
-using SmartTicket.Infrastructure.Services;
+using SmartHotel.Infrastructure.AuthenticationManager;
+using SmartHotel.Infrastructure.Behaviours;
+using SmartHotel.Infrastructure.Exceptions;
+using SmartHotel.Infrastructure.Logging;
 using System.Reflection;
-using static SmartTicket.Infrastructure.AuthenticationManager.CustomJwtAuthExtension;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("DbConnection");
 
 builder.Services.AddControllers();
-//builder.Services.AddValidatorsFromAssemblyContaining<AddRoomtValidator>();
-builder.Services.AddHttpContextAccessor();
-builder.Services.AddScoped<IUserContext, UserContext>();
-builder.Services.AddScoped<IRoomAvailabilityRepository, RoomAvailabilityRepository>();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+builder.Services.AddRouting(x => x.LowercaseUrls = true);
 builder.Services.AddCustomJwtAuthentication(builder.Configuration["Jwt:Secret"], builder.Configuration["Jwt:Issuer"]);
+builder.Host.UseSerilogLogger();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+//builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
-var connectionString = builder.Configuration.GetConnectionString("DbConnection");
+
 builder.Services.AddDbContext<RoomDbContext>(x =>
 {
     x.UseSqlServer(connectionString);
 });
+builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+
+builder.Services.AddMassTransit(x =>
+{
+    x.AddConsumer<AvailabilityUpdatedEventConsumer>();
+
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host(builder.Configuration["RabbitMQ:Host"], host =>
+        {
+            host.Username(builder.Configuration["RabbitMQ:UserName"]);
+            host.Password(builder.Configuration["RabbitMQ:Password"]);
+        });
+        cfg.ReceiveEndpoint("order-queue", e =>
+        {
+            e.ConfigureConsumer<AvailabilityUpdatedEventConsumer>(context);
+        });
+    });
+});
+
+
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionLoggingMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {

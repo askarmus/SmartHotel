@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace AuthenticationService.Migrations
+namespace SmartHotel.AuthenticationService.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration

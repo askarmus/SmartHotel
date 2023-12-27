@@ -4,7 +4,7 @@ using Serilog;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace SmartTicket.Infrastructure.Logging
+namespace SmartHotel.Infrastructure.Logging
 {
     public static class LoggerConfiguration
     {

@@ -1,19 +1,18 @@
-using AuthenticationService.CQRS.Queries.GetUserDetails;
-using AuthenticationService.Entities;
-using AuthenticationService.Services;
-using AuthenticationService.Services.JwtService;
-using AuthenticationService.Services.UserService;
+using SmartHotel.AuthenticationService.CQRS.Queries.GetUserDetails;
+using SmartHotel.AuthenticationService.Entities;
+using SmartHotel.AuthenticationService.Services;
+using SmartHotel.AuthenticationService.Services.JwtService;
+using SmartHotel.AuthenticationService.Services.UserService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using SmartTicket.Infrastructure.Logging;
-using static SmartTicket.Infrastructure.AuthenticationManager.CustomJwtAuthExtension;
+using SmartHotel.Infrastructure.Logging;
+using static SmartHotel.Infrastructure.AuthenticationManager.CustomJwtAuthExtension;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DbConnection");
-
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();

@@ -1,11 +1,11 @@
-﻿using AuthenticationService.DTO;
-using AuthenticationService.Entities;
-using AuthenticationService.Services.UserService;
+﻿using SmartHotel.AuthenticationService.DTO;
+using SmartHotel.AuthenticationService.Entities;
+using SmartHotel.AuthenticationService.Services.UserService;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
-using SmartTicket.Exceptions.Abstraction;
+using SmartHotel.Exceptions.Abstraction;
 
-namespace AuthenticationService.CQRS.Queries.GetUserDetails
+namespace SmartHotel.AuthenticationService.CQRS.Queries.GetUserDetails
 {
     public class GetUserDetailsQueryHandler : IRequestHandler<GetUserDetailsQuery, UserDto>, IUserService
     {

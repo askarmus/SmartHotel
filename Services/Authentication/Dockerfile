@@ -9,9 +9,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Authentication/AuthenticationService.csproj", "Authentication/"]
-COPY ["BuildingBlock/SmartTicket.Exceptions.Abstraction/SmartTicket.Exceptions.Abstraction.csproj", "BuildingBlock/SmartTicket.Exceptions.Abstraction/"]
-COPY ["BuildingBlock/SmartTicket.Infrastructure/SmartTicket.Infrastructure.csproj", "BuildingBlock/SmartTicket.Infrastructure/"]
-COPY ["SmartTicket.Core/SmartTicket.Core.csproj", "SmartTicket.Core/"]
+COPY ["BuildingBlock/SmartHotel.Exceptions.Abstraction/SmartHotel.Exceptions.Abstraction.csproj", "BuildingBlock/SmartHotel.Exceptions.Abstraction/"]
+COPY ["BuildingBlock/SmartHotel.Infrastructure/SmartHotel.Infrastructure.csproj", "BuildingBlock/SmartHotel.Infrastructure/"]
+COPY ["SmartHotel.Core/SmartHotel.Core.csproj", "SmartHotel.Core/"]
 RUN dotnet restore "./Authentication/./AuthenticationService.csproj"
 COPY . .
 WORKDIR "/src/Authentication"

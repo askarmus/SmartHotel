@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace AuthenticationService.CQRS.Commands.Register
+namespace SmartHotel.AuthenticationService.CQRS.Commands.Register
 {
     public class RegisterUserCommand : IRequest
     {

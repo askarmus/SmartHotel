@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SmartTicket.Exceptions.Abstraction
+namespace SmartHotel.Exceptions.Abstraction
 {
     public abstract class AppException : Exception
     {
@@ -13,10 +13,10 @@ namespace SmartTicket.Exceptions.Abstraction
         }
     }
 
-    public abstract class SmartTicketValidationException : AppException
+    public abstract class SmartHotelValidationException : AppException
     {
         public List<string> ValidationMessages { get; set; }
-        protected SmartTicketValidationException(string message, int exceptionCode) : base(message, exceptionCode)
+        protected SmartHotelValidationException(string message, int exceptionCode) : base(message, exceptionCode)
         {
         }
     }

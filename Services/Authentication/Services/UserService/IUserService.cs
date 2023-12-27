@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using AuthenticationService.DTO;
+using SmartHotel.AuthenticationService.DTO;
 
-namespace AuthenticationService.Services.UserService
+namespace SmartHotel.AuthenticationService.Services.UserService
 {
     public interface IUserService
     {

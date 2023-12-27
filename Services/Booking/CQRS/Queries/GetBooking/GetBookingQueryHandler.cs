@@ -1,9 +1,9 @@
-﻿using BookingService.CQRS.Queries.GetBooking.Response;
-using BookingService.Repository;
+﻿using SmartHotel.BookingService.CQRS.Queries.GetBooking.Response;
+using SmartHotel.BookingService.Repository;
 using MediatR;
-using SmartTicket.Exceptions.Abstraction;
+using SmartHotel.Exceptions.Abstraction;
 
-namespace BookingService.CQRS.Queries.GetBooking
+namespace SmartHotel.BookingService.CQRS.Queries.GetBooking
 {
     public class GetBookingQueryHandler : IRequestHandler<GetBookingQuery, GetBookingQueryResponse>
     {
@@ -20,7 +20,7 @@ namespace BookingService.CQRS.Queries.GetBooking
             if ( booking is null)
                 throw new NotFoundException(request.BookingId.ToString(), nameof(Entities.Booking));
 
-            return new GetBookingQueryResponse(booking.BookingId, booking.UserId , booking.RoomId, booking.CheckInDate, booking.CheckOutDate, booking.BookingStatus);
+            return new GetBookingQueryResponse(booking.BookingId, booking.UserId , booking.RoomId, booking.BookingDate, booking.BookingStatus);
 
         }
     }

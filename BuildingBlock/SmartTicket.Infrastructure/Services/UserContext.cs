@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Http;
 
-namespace SmartTicket.Infrastructure.Services
+namespace SmartHotel.Infrastructure.Services
 {
     public class UserContext : IUserContext
     {

@@ -1,4 +1,4 @@
-﻿namespace SmartTicket.Infrastructure.Services
+﻿namespace SmartHotel.Infrastructure.Services
 {
     public interface IUserContext
     {

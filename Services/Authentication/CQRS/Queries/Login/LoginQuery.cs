@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using AuthenticationService.CQRS.Queries.Login.Responses;
+using SmartHotel.AuthenticationService.CQRS.Queries.Login.Responses;
 
-namespace AuthenticationService.CQRS.Queries.Login
+namespace SmartHotel.AuthenticationService.CQRS.Queries.Login
 {
     public class LoginQuery : IRequest<LoginResponse>
     {
