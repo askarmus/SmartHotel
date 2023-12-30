@@ -13,6 +13,14 @@ namespace SmartHotel.BookingService.Data
 
         public DbSet<Entities.Booking> Bookings { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Entities.Booking>()
+            .Property(u => u.PaymentStatus)
+            .HasConversion<string>()
+            .HasMaxLength(50);
+        }
+
     }
 }
 

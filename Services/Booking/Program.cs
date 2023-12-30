@@ -12,6 +12,8 @@ using SmartHotel.Infrastructure.Exceptions;
 using SmartHotel.Infrastructure.Logging;
 using System.Reflection;
 using SmartHotel.Infrastructure.Services;
+using Microsoft.Extensions.Configuration;
+using SmartHotel.Infrastructure.Config;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DbConnection");
@@ -24,36 +26,15 @@ builder.Services.AddRouting(x => x.LowercaseUrls = true);
 builder.Services.AddCustomJwtAuthentication(builder.Configuration["Jwt:Secret"], builder.Configuration["Jwt:Issuer"]);
 builder.Host.UseSerilogLogger();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-
 builder.Services.AddHttpContextAccessor();
-
-//builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-
 builder.Services.AddValidatorsFromAssemblyContaining<CreateBookingRequestValidator>();
 
 builder.Services.AddDbContext<BookingDbContext>(x =>
 {
     x.UseSqlServer(connectionString);
 });
-builder.Services.AddScoped<IBookingRepository, BookingRepository>();
-
-builder.Services.AddMassTransit(x =>
-{
-    x.AddConsumer<BookingStatusUpdateConsumer>();
-    x.UsingRabbitMq((context, cfg) =>
-    {
-        cfg.Host(builder.Configuration["RabbitMQ:Host"], host =>
-        {
-            host.Username(builder.Configuration["RabbitMQ:UserName"]);
-            host.Password(builder.Configuration["RabbitMQ:Password"]);
-        });
-        cfg.ReceiveEndpoint("booking-queue", e =>
-        {
-            e.ConfigureConsumer<BookingStatusUpdateConsumer>(context);
-        });
-    });
-});
-
+builder.Services.AddTransient<IBookingRepository, BookingRepository>();
+builder.Services.ConfigureMassTransit<BookingStatusUpdateConsumer>(builder.Configuration);
 
 var app = builder.Build();
 

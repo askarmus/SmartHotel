@@ -17,19 +17,12 @@ namespace SmartHotel.BookingService.Consumers
         public async Task Consume(ConsumeContext<BookingStatusUpdateEvent> context)
         {
             var bookingId = context.Message.BookingId;
-            var paymentStatus = context.Message.PaymentStatus;
-            var availabilityStatus = context.Message.AvailabilityStatus;
 
             var booking = await _bookingRepository.GetBookingAsync(bookingId);
 
-            if (booking == null)
-            {
-                return;
-            }
+            if (booking == null) return;
 
-            booking.BookingStatus = (paymentStatus == PaymentStatus.Success)
-                ? BookingStatus.Confirmed
-                : BookingStatus.Cancelled;
+            booking.PaymentStatus = context.Message.PaymentStatus;
 
             await _bookingRepository.UpdateBookingStatusAsync(booking);
         }

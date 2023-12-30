@@ -17,7 +17,6 @@ namespace SmartHotel.BookingService.Repository
             return await _context.Bookings.FirstOrDefaultAsync(w=>w.Id == bookingId);
         }
 
-
         public async Task<int> CreateBookingAsync(Entities.Booking booking)
         {
             _context.Bookings.Add(booking);
@@ -29,29 +28,13 @@ namespace SmartHotel.BookingService.Repository
 
         public async Task UpdateBookingStatusAsync(Entities.Booking booking)
         {
-            if (booking == null)
-            {
-                throw new ArgumentNullException(nameof(booking));
-            }
+           var existingBooking = await _context.Bookings.FindAsync(booking.Id);
 
-            try
+            if (existingBooking != null)
             {
-                var existingBooking = await _context.Bookings.FindAsync(booking.Id);
+                existingBooking.PaymentStatus = booking.PaymentStatus;
 
-                if (existingBooking != null)
-                {
-                    existingBooking.BookingStatus = booking.BookingStatus;
-
-                    await _context.SaveChangesAsync();
-                }
-                else
-                {
-                    throw new InvalidOperationException($"Booking with ID {booking.Id} not found.");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new InvalidOperationException("Failed to update booking status.", ex);
+                await _context.SaveChangesAsync();
             }
         }
     }

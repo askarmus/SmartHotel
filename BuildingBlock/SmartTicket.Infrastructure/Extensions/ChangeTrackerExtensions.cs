@@ -29,7 +29,7 @@ namespace SmartHotel.Infrastructure.Extensions
             {
                 DateTimeOffset timestamp = DateTimeOffset.UtcNow;
 
-                string user = currentUserService.GetCurrentUser().LoginName;
+                string user =  currentUserService.GetCurrentUser().LoginName;
 
                 foreach (EntityEntry entry in entities)
                 {
@@ -45,7 +45,7 @@ namespace SmartHotel.Infrastructure.Extensions
                             break;
                         case EntityState.Modified:
                             entity.UpdatedOn = timestamp;
-                            entity.UpdatedBy = user;
+                            entity.UpdatedBy = user ?? entity.CreatedBy;
                             break;
                         case EntityState.Deleted:
                             entity.IsDeleted = true;

@@ -1,4 +1,5 @@
-﻿using SmartHotel.Core;
+﻿using Service.Shared.Enum;
+using SmartHotel.Core;
 
 namespace SmartHotel.BookingService.Entities
 {
@@ -6,7 +7,6 @@ namespace SmartHotel.BookingService.Entities
     {
         public int RoomId { get; set; }
         public DateTime BookingDate { get; set; }
-        public BookingStatus BookingStatus { get; set; }
+        public PaymentStatus PaymentStatus { get; set; }
     }
-
 }

@@ -5,6 +5,7 @@ namespace Service.Shared.Enum
     {
         Success,
         Declined,
-        Error
+        Error,
+        Pending
     }
 }

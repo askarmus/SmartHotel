@@ -1,5 +1,6 @@
 ﻿using SmartHotel.BookingService.Repository;
 using MediatR;
+using Service.Shared.Enum;
 
 namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
 {
@@ -18,7 +19,7 @@ namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
             {
                 RoomId = createBookingCommand.RoomId,
                 BookingDate = createBookingCommand.BookingDate,
-                BookingStatus = BookingStatus.Pending
+                PaymentStatus = PaymentStatus.Pending
             };
 
             return await _repository.CreateBookingAsync(booking);
