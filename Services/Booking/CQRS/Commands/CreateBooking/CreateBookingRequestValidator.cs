@@ -7,8 +7,8 @@ namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
         public CreateBookingRequestValidator()
         {
             RuleFor(x => x.BookingDate)
-             .NotEmpty().WithMessage("Check-in date cannot be empty.")
-             .Must(BeGreaterThanOrEqualToCurrentDate).WithMessage("Check-in date must be greater than or equal to the current date.");
+             .NotEmpty().WithMessage("Booking date cannot be empty.")
+             .Must(BeGreaterThanOrEqualToCurrentDate).WithMessage("Booking date must be greater than or equal to the current date.");
         }
 
          private bool BeGreaterThanOrEqualToCurrentDate(DateTime date)

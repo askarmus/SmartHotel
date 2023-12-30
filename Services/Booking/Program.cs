@@ -4,7 +4,6 @@ using SmartHotel.BookingService.CQRS.Commands.CreateBooking;
 using SmartHotel.BookingService.Data;
 using SmartHotel.BookingService.Repository;
 using FluentValidation;
-using MassTransit;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SmartHotel.Infrastructure.AuthenticationManager;
@@ -12,7 +11,6 @@ using SmartHotel.Infrastructure.Exceptions;
 using SmartHotel.Infrastructure.Logging;
 using System.Reflection;
 using SmartHotel.Infrastructure.Services;
-using Microsoft.Extensions.Configuration;
 using SmartHotel.Infrastructure.Config;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,6 +33,10 @@ builder.Services.AddDbContext<BookingDbContext>(x =>
 });
 builder.Services.AddTransient<IBookingRepository, BookingRepository>();
 builder.Services.ConfigureMassTransit<BookingStatusUpdateConsumer>(builder.Configuration);
+
+builder.Services.AddValidatorsFromAssemblyContaining<CreateBookingRequestValidator>();
+
+
 
 var app = builder.Build();
 

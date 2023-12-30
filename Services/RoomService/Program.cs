@@ -1,13 +1,11 @@
 
-using SmartHotel. BookingService.Consumers;
-using SmartHotel. BookingService.Data;
-using SmartHotel. BookingService.Repository;
-using FluentValidation;
+using SmartHotel.BookingService.Consumers;
+using SmartHotel.BookingService.Data;
+using SmartHotel.BookingService.Repository;
 using MassTransit;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SmartHotel.Infrastructure.AuthenticationManager;
-using SmartHotel.Infrastructure.Behaviours;
 using SmartHotel.Infrastructure.Exceptions;
 using SmartHotel.Infrastructure.Logging;
 using System.Reflection;
