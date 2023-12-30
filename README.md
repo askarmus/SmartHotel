@@ -1,4 +1,4 @@
-# Microservices Booking System with MassTransit and RabbitMQ
+# Microservices Smaer Hotel System with MassTransit and RabbitMQ
 
 ## Overview
 
