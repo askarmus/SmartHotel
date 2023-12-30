@@ -1,7 +1,7 @@
 
-using BookingService.Consumers;
-using BookingService.Data;
-using BookingService.Repository;
+using SmartHotel. BookingService.Consumers;
+using SmartHotel. BookingService.Data;
+using SmartHotel. BookingService.Repository;
 using FluentValidation;
 using MassTransit;
 using MediatR;
@@ -42,7 +42,7 @@ builder.Services.AddMassTransit(x =>
             host.Username(builder.Configuration["RabbitMQ:UserName"]);
             host.Password(builder.Configuration["RabbitMQ:Password"]);
         });
-        cfg.ReceiveEndpoint("order-queue", e =>
+        cfg.ReceiveEndpoint("availability-check", e =>
         {
             e.ConfigureConsumer<AvailabilityUpdatedEventConsumer>(context);
         });

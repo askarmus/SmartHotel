@@ -1,19 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SmartHotel.Infrastructure.Persistence;
+using SmartHotel.Infrastructure.Extensions;
+using SmartHotel.Infrastructure.Perception;
+using SmartHotel.Infrastructure.Services;
 
 namespace SmartHotel.BookingService.Data
 {
     public class BookingDbContext : BaseDbContext
     {
+        public BookingDbContext(DbContextOptions options, ICurrentUserService currentUserService) : base(options, currentUserService)
+        {
+        }
+
         public DbSet<Entities.Booking> Bookings { get; set; }
 
-        public BookingDbContext(DbContextOptions<BookingDbContext> options) : base(options)
-        {
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            // Configure relationships, constraints, etc.
-        }
     }
 }
+
+

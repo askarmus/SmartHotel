@@ -1,5 +1,5 @@
 ﻿
-namespace BookingService.CQRS.Queries.IsRoomAvailable.Response
+namespace SmartHotel. BookingService.CQRS.Queries.IsRoomAvailable.Response
 {
     public class IsRoomAvailabilityQueryResponse
     {

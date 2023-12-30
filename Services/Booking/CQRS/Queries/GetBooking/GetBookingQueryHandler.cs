@@ -20,7 +20,7 @@ namespace SmartHotel.BookingService.CQRS.Queries.GetBooking
             if ( booking is null)
                 throw new NotFoundException(request.BookingId.ToString(), nameof(Entities.Booking));
 
-            return new GetBookingQueryResponse(booking.BookingId, booking.UserId , booking.RoomId, booking.BookingDate, booking.BookingStatus);
+            return new GetBookingQueryResponse(booking.Id , booking.RoomId, booking.BookingDate, booking.BookingStatus);
 
         }
     }

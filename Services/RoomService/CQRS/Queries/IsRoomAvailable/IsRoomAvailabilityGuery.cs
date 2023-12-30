@@ -1,7 +1,7 @@
-﻿using BookingService.CQRS.Queries.IsRoomAvailable.Response;
+﻿using SmartHotel. BookingService.CQRS.Queries.IsRoomAvailable.Response;
 using MediatR;
 
-namespace BookingService.CQRS.Queries.IsRoomAvailable
+namespace SmartHotel. BookingService.CQRS.Queries.IsRoomAvailable
 {
     public class IsRoomAvailabilityGuery : IRequest<IsRoomAvailabilityQueryResponse>
     {

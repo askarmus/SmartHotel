@@ -8,14 +8,15 @@ using MassTransit;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SmartHotel.Infrastructure.AuthenticationManager;
-using SmartHotel.Infrastructure.Behaviours;
 using SmartHotel.Infrastructure.Exceptions;
 using SmartHotel.Infrastructure.Logging;
 using System.Reflection;
+using SmartHotel.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DbConnection");
 
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
@@ -23,6 +24,9 @@ builder.Services.AddRouting(x => x.LowercaseUrls = true);
 builder.Services.AddCustomJwtAuthentication(builder.Configuration["Jwt:Secret"], builder.Configuration["Jwt:Issuer"]);
 builder.Host.UseSerilogLogger();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+builder.Services.AddHttpContextAccessor();
+
 //builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
 builder.Services.AddValidatorsFromAssemblyContaining<CreateBookingRequestValidator>();

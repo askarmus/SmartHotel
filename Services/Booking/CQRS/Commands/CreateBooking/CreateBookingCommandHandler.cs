@@ -12,13 +12,12 @@ namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        public async Task<int> Handle(CreateBookingCommand createBookingDto, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateBookingCommand createBookingCommand, CancellationToken cancellationToken)
         {
             var booking = new Entities.Booking
             {
-                UserId = createBookingDto.UserId,
-                RoomId = createBookingDto.RoomId,
-                BookingDate = createBookingDto.BookingDate,
+                RoomId = createBookingCommand.RoomId,
+                BookingDate = createBookingCommand.BookingDate,
                 BookingStatus = BookingStatus.Pending
             };
 

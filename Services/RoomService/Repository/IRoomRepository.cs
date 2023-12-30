@@ -1,5 +1,5 @@
 ﻿
-namespace BookingService.Repository
+namespace SmartHotel. BookingService.Repository
 {
     public interface IRoomRepository
     {

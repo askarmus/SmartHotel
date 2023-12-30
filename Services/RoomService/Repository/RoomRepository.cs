@@ -1,8 +1,7 @@
-﻿using BookingService.Data;
-using MassTransit;
+﻿using SmartHotel. BookingService.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookingService.Repository
+namespace SmartHotel. BookingService.Repository
 {
     public class RoomRepository : IRoomRepository
     {
@@ -15,16 +14,14 @@ namespace BookingService.Repository
 
         public async Task<bool> IsRoomAvailable(int roomId, DateTime bookingDatee)
         {
-            var isAvailable = await _context.RoomAvailability
-                .Where(a => a.RoomId == roomId && a.BookingDate == bookingDatee)
-                .AllAsync(a => a.IsAvailable);
+            var isAvailable = await _context.RoomAvailability.AnyAsync(a => a.RoomId == roomId && a.BookingDate.Date == bookingDatee.Date);
 
             return isAvailable;
         }
         public async Task<int> CreateBookingStatus(int roomId, DateTime bookingDatee)
         {
 
-            var roomAvailability = new RoomService.Entityty.RoomAvailability()
+            var roomAvailability = new RoomService.Entities.RoomAvailability()
             {
                 BookingDate = bookingDatee,
                 RoomId = roomId,

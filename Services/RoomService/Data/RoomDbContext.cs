@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RoomService.Entityty;
-using SmartHotel.Infrastructure.Persistence;
+using SmartHotel.RoomService.Entities;
 
-namespace BookingService.Data
+namespace SmartHotel. BookingService.Data
 {
-    public class RoomDbContext : BaseDbContext
+    public class RoomDbContext : DbContext
     {
         public DbSet<RoomAvailability> RoomAvailability { get; set; }
 

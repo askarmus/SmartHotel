@@ -1,10 +1,10 @@
-﻿using BookingService.Repository;
+﻿using SmartHotel. BookingService.Repository;
 using MassTransit;
 using MassTransit.Transports;
 using Service.Shared;
 using Service.Shared.Enum;
 
-namespace BookingService.Consumers
+namespace SmartHotel.BookingService.Consumers
 {
     public class AvailabilityUpdatedEventConsumer : IConsumer<AvailabilityUpdatedEvent>
     {

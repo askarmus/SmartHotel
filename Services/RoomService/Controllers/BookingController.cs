@@ -1,12 +1,12 @@
 using AutoMapper;
-using BookingService.CQRS.Queries.GetBooking;
+using SmartHotel. BookingService.CQRS.Queries.GetBooking;
 using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.Shared;
 
-namespace BookingService.Controllers
+namespace SmartHotel. BookingService.Controllers
 {
     [ApiController]
     [Authorize]

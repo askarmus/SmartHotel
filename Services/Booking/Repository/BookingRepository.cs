@@ -14,20 +14,17 @@ namespace SmartHotel.BookingService.Repository
 
         public async Task<Entities.Booking> GetBookingAsync(int bookingId)
         {
-            return await _context.Bookings.FindAsync(bookingId);
+            return await _context.Bookings.FirstOrDefaultAsync(w=>w.Id == bookingId);
         }
 
-        public async Task<IEnumerable<Entities.Booking>> GetBookingsAsync(int userId)
-        {
-            return await _context.Bookings.Where(b => b.UserId == userId).ToListAsync();
-        }
 
         public async Task<int> CreateBookingAsync(Entities.Booking booking)
         {
             _context.Bookings.Add(booking);
+
             await _context.SaveChangesAsync();
 
-            return booking.BookingId;
+            return booking.Id;
         }
 
         public async Task UpdateBookingStatusAsync(Entities.Booking booking)
@@ -39,19 +36,17 @@ namespace SmartHotel.BookingService.Repository
 
             try
             {
-                var existingBooking = await _context.Bookings.FindAsync(booking.BookingId);
+                var existingBooking = await _context.Bookings.FindAsync(booking.Id);
 
                 if (existingBooking != null)
                 {
                     existingBooking.BookingStatus = booking.BookingStatus;
 
-                    // Update other properties as needed
-
                     await _context.SaveChangesAsync();
                 }
                 else
                 {
-                    throw new InvalidOperationException($"Booking with ID {booking.BookingId} not found.");
+                    throw new InvalidOperationException($"Booking with ID {booking.Id} not found.");
                 }
             }
             catch (Exception ex)

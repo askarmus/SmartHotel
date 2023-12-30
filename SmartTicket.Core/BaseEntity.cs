@@ -1,11 +1,21 @@
-﻿namespace SmartHotel.Core
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace SmartHotel.Core
 {
-    public class BaseEntity
+    public abstract class EntityBase : IEntityBase
     {
-        public Guid Id { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public string CreatedBy { get; set; } = string.Empty;
-        public DateTime ModifiedDate { get; set; }
-        public string ModifiedBy { get; set; } = string.Empty;
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public DateTimeOffset CreatedOn { get; set; }
+
+        public string CreatedBy { get; set; }
+
+        public DateTimeOffset UpdatedOn { get; set; }
+
+        public string UpdatedBy { get; set; }
     }
 }
