@@ -1,7 +1,7 @@
 ﻿using Service.Shared.Enum;
 using SmartHotel.Core;
 
-namespace SmartHotel.BookingService.Entities
+namespace Data.Entities
 {
     public class Booking : EntityBase
     {

@@ -1,11 +1,11 @@
-﻿using SmartHotel. BookingService.CQRS.Queries.IsRoomAvailable;
-using SmartHotel. BookingService.CQRS.Queries.IsRoomAvailable.Response;
-using SmartHotel. BookingService.Repository;
+﻿using SmartHotel.BookingService.CQRS.Queries.IsRoomAvailable;
+using SmartHotel.BookingService.CQRS.Queries.IsRoomAvailable.Response;
+using SmartHotel.BookingService.Repository;
 using MediatR;
 using SmartHotel.Exceptions.Abstraction;
-using SmartHotel.RoomService.Entities;
+using SmartHotel.RoomService.Data.Entities;
 
-namespace SmartHotel. BookingService.CQRS.Queries.GetBooking
+namespace SmartHotel.BookingService.CQRS.Queries.GetBooking
 {
     public class IsRoomAvailabilityQueryHandler : IRequestHandler<IsRoomAvailabilityGuery, IsRoomAvailabilityQueryResponse>
     {

@@ -20,7 +20,6 @@ builder.Services.AddRouting(x => x.LowercaseUrls = true);
 builder.Services.AddCustomJwtAuthentication(builder.Configuration["Jwt:Secret"], builder.Configuration["Jwt:Issuer"]);
 builder.Host.UseSerilogLogger();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-//builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
 
 builder.Services.AddDbContext<RoomDbContext>(x =>

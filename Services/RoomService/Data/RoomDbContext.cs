@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SmartHotel.RoomService.Entities;
+using SmartHotel.RoomService.Data.Entities;
 
-namespace SmartHotel. BookingService.Data
+namespace SmartHotel.BookingService.Data
 {
     public class RoomDbContext : DbContext
     {

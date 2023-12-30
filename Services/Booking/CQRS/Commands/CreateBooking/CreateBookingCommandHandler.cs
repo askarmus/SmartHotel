@@ -2,7 +2,7 @@
 using MediatR;
 using Service.Shared.Enum;
 using FluentValidation;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using Data.Entities;
 
 namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
 {
@@ -13,15 +13,15 @@ namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
 
         public CreateBookingCommandHandler(IBookingRepository repository, IValidator<CreateBookingCommand> validator)
         {
-            _repository = repository  ;
-            _validator = validator  ;
+            _repository = repository ;
+            _validator = validator ;
         }
 
         public async Task<int> Handle(CreateBookingCommand createBookingCommand, CancellationToken cancellationToken)
         {
             _validator.ValidateAndThrow(createBookingCommand);
 
-            var booking = new Entities.Booking
+            var booking = new Booking
             {
                 RoomId = createBookingCommand.RoomId,
                 BookingDate = createBookingCommand.BookingDate,

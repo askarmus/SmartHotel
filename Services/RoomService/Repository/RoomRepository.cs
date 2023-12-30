@@ -1,5 +1,6 @@
 ﻿using SmartHotel. BookingService.Data;
 using Microsoft.EntityFrameworkCore;
+using SmartHotel.RoomService.Data.Entities;
 
 namespace SmartHotel. BookingService.Repository
 {
@@ -21,7 +22,7 @@ namespace SmartHotel. BookingService.Repository
         public async Task<int> CreateBookingStatus(int roomId, DateTime bookingDatee)
         {
 
-            var roomAvailability = new RoomService.Entities.RoomAvailability()
+            var roomAvailability = new RoomAvailability()
             {
                 BookingDate = bookingDatee,
                 RoomId = roomId,

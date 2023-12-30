@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SmartHotel.Infrastructure.Extensions;
+﻿using Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using SmartHotel.Infrastructure.Perception;
 using SmartHotel.Infrastructure.Services;
 
@@ -11,11 +11,11 @@ namespace SmartHotel.BookingService.Data
         {
         }
 
-        public DbSet<Entities.Booking> Bookings { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Entities.Booking>()
+            modelBuilder.Entity<Booking>()
             .Property(u => u.PaymentStatus)
             .HasConversion<string>()
             .HasMaxLength(50);

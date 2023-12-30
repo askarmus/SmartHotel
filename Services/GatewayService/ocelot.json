@@ -17,6 +17,18 @@
       ],
       "DownstreamPathTemplate": "/api/Booking/CreateBooking"
     },
+    {
+      "UpstreamPathTemplate": "/api/Booking/GetBooking/{bookingId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5081
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Booking/GetBooking/{bookingId}"
+    },
 
     //Room Availability
     {

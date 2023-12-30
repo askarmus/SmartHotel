@@ -1,5 +1,6 @@
 ﻿using SmartHotel.BookingService.Data;
 using Microsoft.EntityFrameworkCore;
+using Data.Entities;
 
 namespace SmartHotel.BookingService.Repository
 {
@@ -12,12 +13,12 @@ namespace SmartHotel.BookingService.Repository
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<Entities.Booking> GetBookingAsync(int bookingId)
+        public async Task<Booking> GetBookingAsync(int bookingId)
         {
             return await _context.Bookings.FirstOrDefaultAsync(w=>w.Id == bookingId);
         }
 
-        public async Task<int> CreateBookingAsync(Entities.Booking booking)
+        public async Task<int> CreateBookingAsync(Booking booking)
         {
             _context.Bookings.Add(booking);
 
@@ -26,7 +27,7 @@ namespace SmartHotel.BookingService.Repository
             return booking.Id;
         }
 
-        public async Task UpdateBookingStatusAsync(Entities.Booking booking)
+        public async Task UpdateBookingStatusAsync(Booking booking)
         {
            var existingBooking = await _context.Bookings.FindAsync(booking.Id);
 
