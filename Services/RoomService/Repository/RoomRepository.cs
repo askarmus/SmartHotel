@@ -12,9 +12,9 @@ namespace SmartHotel. BookingService.Repository
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<bool> IsRoomAvailable(int roomId, DateTime bookingDatee)
+        public async Task<bool> IsRoomAvailable(int roomId, DateTime bookingDate)
         {
-            var isAvailable = await _context.RoomAvailability.AnyAsync(a => a.RoomId == roomId && a.BookingDate.Date == bookingDatee.Date);
+            var isAvailable = await _context.RoomAvailability.AnyAsync(a => a.RoomId == roomId && a.BookingDate.Date == bookingDate.Date);
 
             return isAvailable;
         }

@@ -15,7 +15,7 @@ namespace FakePaymentGatewayService.Controllers
         [HttpPost("Process")]
         public async Task<IActionResult> Process([FromBody] PaymentRequest request)
         {
-            Thread.Sleep(1000);
+            await Task.Delay(1000);
 
             int lastDigit = int.Parse(request.CreditCardNumber.Substring(request.CreditCardNumber.Length - 1));
 
@@ -31,7 +31,7 @@ namespace FakePaymentGatewayService.Controllers
             return BadRequest(new PaymentResponse
             {
                 PaymentStatus = PaymentStatus.Declined,
-                TransactionId = null,
+                TransactionId = string.Empty,
             });
         }
     }

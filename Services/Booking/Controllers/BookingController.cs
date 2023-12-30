@@ -37,12 +37,7 @@ namespace SmartHotel.BookingService.Controllers
         public async Task<IActionResult> CreateBooking([FromBody] CreateBookingRequest request)
         {
 
-            try
-            {
-                var response = await _client.GetResponse<AvailabilityUpdateResult>(new { request.RoomId, request.BookingDate });
-
-          
-
+            var response = await _client.GetResponse<AvailabilityUpdateResult>(new { request.RoomId, request.BookingDate });
 
             if (response.Message.AvailabilityStatus !=  Service.Shared.Enum.AvailabilityStatus.AlreadyBooked)
             {
@@ -68,12 +63,7 @@ namespace SmartHotel.BookingService.Controllers
             {
                 return BadRequest($"Booking is not avialbe for {request.BookingDate}");
             }
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
+            
 
         }
     }

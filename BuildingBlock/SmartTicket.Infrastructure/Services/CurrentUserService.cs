@@ -20,19 +20,18 @@ namespace SmartHotel.Infrastructure.Services
 
         public IUserSession GetCurrentUser()
         {
-            if (_httpContextAccessor?.HttpContext == null)
+            if (_httpContextAccessor?.HttpContext != null)
             {
-                return new UserSession();
+               return  new UserSession
+                {
+                    UserId = Guid.Parse(_httpContextAccessor.HttpContext.User.Claims.First(x => x.Type == "UserId").Value),
+                    LoginName = _httpContextAccessor.HttpContext.User.Identity.Name,
+                    Role = "User",
+                };
             }
 
-            IUserSession currentUser = new UserSession
-            {
-                UserId =  Guid.Parse(_httpContextAccessor?.HttpContext.User.Claims.First(x => x.Type == "UserId").Value),
-                LoginName = _httpContextAccessor?.HttpContext.User.Identity.Name,
-                Role = "User",
-            };
+            return new UserSession();
 
-            return currentUser;
         }
     }
 }
