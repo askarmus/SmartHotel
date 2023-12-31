@@ -25,24 +25,13 @@ This project demonstrates the implementation of a microservices-based hotel book
 ![techStack](Doc/techStack.png)  
 
 ## Features
-- **Booking Service:**
-  - Manages the booking process.
-  - Orchestrates the workflow using MassTransit and RabbitMQ.
-  - Saga pattern implementation to handle state transitions.
+ **Booking Service:**  Manages the booking lifecycle, orchestrates workflows using MassTransit and RabbitMQ, and implements the Saga pattern for state transitions. Collaborates with Payment and Availability Services.
 
-- **Payment Service:**
-  - Processes payments asynchronously.
-  - Communicates with external payment gateways.
-  - Sends payment status updates to the Booking Service.
+**Payment Service:** Processes payments asynchronously, communicates with external gateways, and updates the Booking Service with payment statuses, ensuring seamless integration within the booking ecosystem. 
 
-- **Availability Service:**
-  - Manages room availability.
-  - Updates availability based on bookings.
-  - Sends availability status updates to the Booking Service.
+**Availability Service:** Manages real-time room availability updates based on bookings from the Booking Service, fostering an accurate representation of room status and communicating updates to support timely decision-making.
 
-- **Authentication Service:**
-  - Manages user authentication.
-  - Provides authentication tokens for secured operations.
+**Authentication Service:** Ensures system security by managing user authentication, validating credentials, and providing authentication tokens for secure operations, safeguarding against unauthorized access.
     
 ## ⭐ Give a star
 If you're using this repository for your learning, samples, workshop, or your project, please give a star. Thanks :+1:
