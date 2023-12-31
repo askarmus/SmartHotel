@@ -22,7 +22,6 @@ This project demonstrates the implementation of a microservices-based hotel book
 - ✔️ **[`RabbitMQ`](https://automapper.org)** - RabbitMQ is an open-source message-broker
 - ✔️ **[`MassTransit`](https://masstransit.io/)** - MassTransit provides a developer-focused, modern platform for creating distributed applications without complexity.
 
-## Tech Stack
 ![techStack](Doc/techStack.png)  
 
 ## Features
