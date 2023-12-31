@@ -38,7 +38,7 @@ If you find this project useful, please give it a star. Thanks! ⭐
     
 ## Authors
 
-If you have any questions or need further assistance, please contact the project author at [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/askarmus)
+If you have any questions or need further assistance, please contact the project author at **[`LinkedIn`](https://www.linkedin.com/in/askarmus/)**
 
 ## Contributing
 
