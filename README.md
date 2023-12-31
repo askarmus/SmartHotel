@@ -4,8 +4,8 @@
 
 This project demonstrates the implementation of a microservices-based hotel booking system using .NET Core, MassTransit, and RabbitMQ. The system follows a saga pattern to orchestrate the workflow involving booking creation, payment processing, availability updates, and booking status updates.
 
-## Tech Stack
-![techStack](Doc/techStack.png)  
+## Architecture
+![techStack](Doc/archi-diag.jpg)  
 
 
 ## :hearts: Technical stacks
@@ -21,6 +21,9 @@ This project demonstrates the implementation of a microservices-based hotel book
 - ✔️ **[`Polly`](https://github.com/App-vNext/Polly)** - Polly is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner
 - ✔️ **[`RabbitMQ`](https://automapper.org)** - RabbitMQ is an open-source message-broker
 - ✔️ **[`MassTransit`](https://masstransit.io/)** - MassTransit provides a developer-focused, modern platform for creating distributed applications without complexity.
+
+## Tech Stack
+![techStack](Doc/techStack.png)  
 
 ## Features
 - **Booking Service:**
