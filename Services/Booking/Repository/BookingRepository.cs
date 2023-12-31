@@ -38,5 +38,10 @@ namespace SmartHotel.BookingService.Repository
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<List<Booking>> GetBookingsAsync()
+        {
+            return await _context.Bookings.ToListAsync();
+        }
     }
 }

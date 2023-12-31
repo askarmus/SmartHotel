@@ -6,6 +6,8 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.Shared;
+using SmartHotel.BookingService.CQRS.Queries.GetBookings;
+using AutoMapper;
 
 namespace SmartHotel.BookingService.Controllers
 {
@@ -17,12 +19,14 @@ namespace SmartHotel.BookingService.Controllers
         private readonly IMediator _mediator;
         private readonly IPublishEndpoint _publishEndpoint;
         private readonly IRequestClient<AvailabilityUpdatedEvent> _client;
+        private readonly IMapper _mapper;
 
-        public BookingController(IMediator mediator, IPublishEndpoint publishEndpoint, IRequestClient<AvailabilityUpdatedEvent> client)
+        public BookingController(IMediator mediator, IMapper mapper,  IPublishEndpoint publishEndpoint, IRequestClient<AvailabilityUpdatedEvent> client)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
             _publishEndpoint = publishEndpoint;
             _client = client;
+            _mapper = mapper;
         }
 
         [HttpGet("GetBooking/{bookingId}")]
@@ -33,38 +37,33 @@ namespace SmartHotel.BookingService.Controllers
             return Ok(result);
         }
 
+        [HttpGet("GetBookings")]
+        public async Task<IActionResult> GetBookings(int bookingId)
+        {
+            var result = await _mediator.Send(new GetBookingsQuery { });
+
+            return Ok(result);
+        }
+
         [HttpPost("CreateBooking")]
         public async Task<IActionResult> CreateBooking([FromBody] CreateBookingRequest request)
         {
-
             var response = await _client.GetResponse<AvailabilityUpdateResult>(new { request.RoomId, request.BookingDate });
 
             if (response.Message.AvailabilityStatus !=  Service.Shared.Enum.AvailabilityStatus.AlreadyBooked)
             {
-                var bookingId = await _mediator.Send(new CreateBookingCommand
-                {
-                    RoomId = request.RoomId,
-                    BookingDate = request.BookingDate,
-                    Amount = request.Amount,
-                    CreditCardNumber = request.CreditCardNumber,
-                });
+                var bookingCommand = _mapper.Map<CreateBookingCommand>(request);
+                var bookingId = await _mediator.Send(bookingCommand);
+                var bookingCreatedEvent = _mapper.Map<BookingCreatedEvent>(request);
 
-                await _publishEndpoint.Publish(new BookingCreatedEvent
-                {
-                    CreditCardNumber = request.CreditCardNumber,
-                    Amount = request.Amount,
-                    BookingId = bookingId,
-                });
+                await _publishEndpoint.Publish(bookingCreatedEvent);
                 
                 return Ok(bookingId);
-
             } 
             else
             {
                 return BadRequest($"Booking is not avialbe for {request.BookingDate}");
             }
-            
-
         }
     }
 }

@@ -27,9 +27,20 @@
           "Port": 5081
         }
       ],
-      "DownstreamPathTemplate": "/api/Booking/GetBooking/{bookingId}"
+      "DownstreamPathTemplate": "/api/Booking/GetBookings"
     },
-
+    {
+      "UpstreamPathTemplate": "/api/Booking/GetBookings",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5081
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Booking/GetBookings"
+    },
     //Room Availability
     {
       "UpstreamPathTemplate": "/api/RoomAvailability/GetRoomAvailability/{id}",
