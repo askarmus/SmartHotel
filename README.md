@@ -1,8 +1,11 @@
-# Microservices Smaer Hotel System with MassTransit and RabbitMQ
+# SmartHotel: Microservice Clean Architecture Project using .NET Core 8
 
 ## Overview
 
-This project demonstrates the implementation of a microservices-based hotel booking system using .NET Core, MassTransit, and RabbitMQ. The system follows a saga pattern to orchestrate the workflow involving booking creation, payment processing, availability updates, and booking status updates.
+Explore the SmartHotel Booking System, a comprehensive showcase illustrating the power of microservices architecture. This project, crafted with simplicity and efficiency in mind, demonstrates the orchestration of a hotel booking workflow through a series of modular microservices.
+
+If you find this project useful, please give it a star. Thanks! ⭐
+
 
 ## Architecture
 ![techStack](Doc/archi-diag.jpg)  
@@ -33,10 +36,14 @@ This project demonstrates the implementation of a microservices-based hotel book
 
 **Authentication Service:** Ensures system security by managing user authentication, validating credentials, and providing authentication tokens for secure operations, safeguarding against unauthorized access.
     
-## ⭐ Give a star
-If you're using this repository for your learning, samples, workshop, or your project, please give a star. Thanks :+1:
+## Authors
 
-## Setup and Usage
+If you have any questions or need further assistance, please contact the project author at [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/askarmus)
 
-1. Clone the repository:
-   git clone https://github.com/yourusername/microservices-booking-system.git
+## Contributing
+
+I want you to know that contributions to this project are welcome. Please open an issue or submit a pull request if you have any ideas, bug fixes, or improvements.  
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
