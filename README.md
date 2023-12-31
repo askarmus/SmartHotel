@@ -1,11 +1,14 @@
-# Microservices Smaer Hotel System with MassTransit and RabbitMQ
+# SmartHotel: Microservice Clean Architecture Project using .NET Core 8
 
 ## Overview
 
-This project demonstrates the implementation of a microservices-based hotel booking system using .NET Core, MassTransit, and RabbitMQ. The system follows a saga pattern to orchestrate the workflow involving booking creation, payment processing, availability updates, and booking status updates.
+Explore the SmartHotel Booking System, a comprehensive showcase illustrating the power of microservices architecture. This project, crafted with simplicity and efficiency in mind, demonstrates the orchestration of a hotel booking workflow through a series of modular microservices.
 
-## Tech Stack
-![techStack](Doc/techStack.png)  
+If you find this project useful, please give it a star. Thanks! ⭐
+
+
+## Architecture
+![techStack](Doc/archi-diag.jpg)  
 
 
 ## :hearts: Technical stacks
@@ -22,30 +25,25 @@ This project demonstrates the implementation of a microservices-based hotel book
 - ✔️ **[`RabbitMQ`](https://automapper.org)** - RabbitMQ is an open-source message-broker
 - ✔️ **[`MassTransit`](https://masstransit.io/)** - MassTransit provides a developer-focused, modern platform for creating distributed applications without complexity.
 
+![techStack](Doc/techStack.png)  
+
 ## Features
-- **Booking Service:**
-  - Manages the booking process.
-  - Orchestrates the workflow using MassTransit and RabbitMQ.
-  - Saga pattern implementation to handle state transitions.
+ **Booking Service:**  Manages the booking lifecycle, orchestrates workflows using MassTransit and RabbitMQ, and implements the Saga pattern for state transitions. Collaborates with Payment and Availability Services.
 
-- **Payment Service:**
-  - Processes payments asynchronously.
-  - Communicates with external payment gateways.
-  - Sends payment status updates to the Booking Service.
+**Payment Service:** Processes payments asynchronously, communicates with external gateways, and updates the Booking Service with payment statuses, ensuring seamless integration within the booking ecosystem. 
 
-- **Availability Service:**
-  - Manages room availability.
-  - Updates availability based on bookings.
-  - Sends availability status updates to the Booking Service.
+**Availability Service:** Manages real-time room availability updates based on bookings from the Booking Service, fostering an accurate representation of room status and communicating updates to support timely decision-making.
 
-- **Authentication Service:**
-  - Manages user authentication.
-  - Provides authentication tokens for secured operations.
+**Authentication Service:** Ensures system security by managing user authentication, validating credentials, and providing authentication tokens for secure operations, safeguarding against unauthorized access.
     
-## ⭐ Give a star
-If you're using this repository for your learning, samples, workshop, or your project, please give a star. Thanks :+1:
+## Authors
 
-## Setup and Usage
+If you have any questions or need further assistance, please contact the project author at [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/askarmus)
 
-1. Clone the repository:
-   git clone https://github.com/yourusername/microservices-booking-system.git
+## Contributing
+
+I want you to know that contributions to this project are welcome. Please open an issue or submit a pull request if you have any ideas, bug fixes, or improvements.  
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
