@@ -3,7 +3,7 @@ using SmartHotel.AuthenticationService.Entities;
 using SmartHotel.AuthenticationService.Services.UserService;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
-using SmartHotel.Exceptions.Abstraction;
+using SmartHotel.Abstraction;
 
 namespace SmartHotel.AuthenticationService.CQRS.Queries.GetUserDetails
 {

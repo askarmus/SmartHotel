@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SmartHotel.Exceptions.Abstraction
+namespace SmartHotel.Abstraction
 {
     public abstract class AppException : Exception
     {

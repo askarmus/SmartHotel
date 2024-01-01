@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using SmartHotel.Exceptions.Abstraction;
+using SmartHotel.Abstraction;
 using System;
 using System.Text;
 using System.Threading;

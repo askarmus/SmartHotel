@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Identity;
-using SmartHotel.Exceptions.Abstraction;
+using SmartHotel.Abstraction;
 
 namespace SmartHotel.AuthenticationService.Exceptions
 {

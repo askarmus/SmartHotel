@@ -6,7 +6,7 @@ using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
 using FluentValidation;
-using SmartHotel.Exceptions.Abstraction;
+using SmartHotel.Abstraction;
 
 namespace SmartHotel.Infrastructure.Exceptions
 {

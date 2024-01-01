@@ -2,12 +2,13 @@
 using SmartHotel.BookingService.CQRS.Queries.IsRoomAvailable.Response;
 using SmartHotel.BookingService.Repository;
 using MediatR;
-using SmartHotel.Exceptions.Abstraction;
+using SmartHotel.Abstraction;
 using SmartHotel.RoomService.Data.Entities;
+using SmartHotel.Abstraction.Result;
 
 namespace SmartHotel.BookingService.CQRS.Queries.GetBooking
 {
-    public class IsRoomAvailabilityQueryHandler : IRequestHandler<IsRoomAvailabilityGuery, IsRoomAvailabilityQueryResponse>
+    public class IsRoomAvailabilityQueryHandler : IRequestHandler<IsRoomAvailabilityGuery, Outcome<IsRoomAvailabilityQueryResponse>>
     {
         private readonly IRoomRepository _repository;
 
@@ -16,13 +17,13 @@ namespace SmartHotel.BookingService.CQRS.Queries.GetBooking
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        public async Task<IsRoomAvailabilityQueryResponse> Handle(IsRoomAvailabilityGuery request, CancellationToken cancellationToken)
+        public async Task<Outcome<IsRoomAvailabilityQueryResponse>> Handle(IsRoomAvailabilityGuery request, CancellationToken cancellationToken)
         {
             var isAvailable =  await _repository.IsRoomAvailable(request.RoomId, request.BookingDate);
             if (!isAvailable)
                 throw new NotFoundException(request.RoomId.ToString(), nameof(RoomAvailability));
 
-            return new IsRoomAvailabilityQueryResponse(isAvailable);
+            return  Outcome<IsRoomAvailabilityQueryResponse>.Success( new IsRoomAvailabilityQueryResponse(isAvailable));
         }
     }
 }

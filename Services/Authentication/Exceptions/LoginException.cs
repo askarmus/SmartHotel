@@ -1,4 +1,4 @@
-﻿using SmartHotel.Exceptions.Abstraction;
+﻿using SmartHotel.Abstraction;
 
 namespace SmartHotel.AuthenticationService.Exceptions
 {

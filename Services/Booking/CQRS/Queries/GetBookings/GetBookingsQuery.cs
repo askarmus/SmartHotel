@@ -1,18 +1,20 @@
 ﻿using SmartHotel.BookingService.Repository;
 using MediatR;
-using SmartHotel.Exceptions.Abstraction;
 using SmartHotel.BookingService.CQRS.Queries.GetBookings.Response;
+using SmartHotel.Abstraction;
+using SmartHotel.Abstraction.Result;
+using System.Collections.Generic;
 
 namespace SmartHotel.BookingService.CQRS.Queries.GetBookings
 {
-    public class GetBookingsQuery : IRequest<List<GetBookingsQueryResponse>>, ICachableQuery
+    public class GetBookingsQuery : IRequest<Outcome<List<GetBookingsQueryResponse>>>, ICachableQuery
     {
         public bool BypassCache { get; set; }
         public string CacheKey => $"booking-list";
         public TimeSpan? SlidingExpiration { get; set; }
     }
 
-    internal class GetBookingListQueryHandler : IRequestHandler<GetBookingsQuery, List<GetBookingsQueryResponse>>
+    internal class GetBookingListQueryHandler : IRequestHandler<GetBookingsQuery, Outcome<List<GetBookingsQueryResponse>>>
     {
         private readonly IBookingRepository _repository;
 
@@ -21,7 +23,7 @@ namespace SmartHotel.BookingService.CQRS.Queries.GetBookings
             _repository = repository;
         }
 
-        public async Task<List<GetBookingsQueryResponse>> Handle(GetBookingsQuery request, CancellationToken cancellationToken)
+        public async Task<Outcome<List<GetBookingsQueryResponse>>> Handle(GetBookingsQuery request, CancellationToken cancellationToken)
         {
             var bookings = await _repository.GetBookingsAsync();
 
@@ -33,7 +35,7 @@ namespace SmartHotel.BookingService.CQRS.Queries.GetBookings
                 PaymentStatus = booking.PaymentStatus.ToString()
             }).ToList();
 
-            return getBookingQueryResponses;
+            return  Outcome<List<GetBookingsQueryResponse>>.Success(getBookingQueryResponses);
         }
 
     }

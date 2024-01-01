@@ -23,8 +23,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\SmartTicket.Core\SmartHotel.Core.csproj" />
-	  <ProjectReference Include="..\SmartTicket.Exceptions.Abstraction\SmartHotel.Exceptions.Abstraction.csproj" />
+	  <ProjectReference Include="..\SmartTicket.Core\SmartHotel.Core.csproj" />
+	  <ProjectReference Include="..\SmartTicket.Exceptions.Abstraction\SmartHotel.Abstraction.csproj" />
 	</ItemGroup>
 
 </Project>

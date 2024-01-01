@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{BB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuldingBlocks", "BuldingBlocks", "{F9D7F82C-F6D5-47F8-BECB-E42B013A96C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel.Exceptions.Abstraction", "BuildingBlock\SmartTicket.Exceptions.Abstraction\SmartHotel.Exceptions.Abstraction.csproj", "{0E05B2FD-1B2C-4792-8D5F-75058282F80B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel.Abstraction", "BuildingBlock\SmartTicket.Exceptions.Abstraction\SmartHotel.Abstraction.csproj", "{0E05B2FD-1B2C-4792-8D5F-75058282F80B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel.Infrastructure", "BuildingBlock\SmartTicket.Infrastructure\SmartHotel.Infrastructure.csproj", "{B4B897F7-7960-4AEE-8FCC-BABC9A277CEF}"
 EndProject

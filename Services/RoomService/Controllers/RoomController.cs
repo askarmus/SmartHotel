@@ -11,12 +11,12 @@ namespace SmartHotel. BookingService.Controllers
     [ApiController]
     [Authorize]
     [Route("api/[controller]")]
-    public class BookingController : ControllerBase
+    public class RoomController : ControllerBase
     {
         private readonly IMediator _mediator;
         private readonly IPublishEndpoint _publishEndpoint;
 
-        public BookingController(IMediator mediator, IPublishEndpoint publishEndpoint)
+        public RoomController(IMediator mediator, IPublishEndpoint publishEndpoint)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
             _publishEndpoint = publishEndpoint;

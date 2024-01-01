@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Service.Shared;
 using SmartHotel.BookingService.CQRS.Queries.GetBookings;
 using AutoMapper;
+using SmartHotel.Abstraction.Result;
+using static MassTransit.ValidationResultExtensions;
 
 namespace SmartHotel.BookingService.Controllers
 {
@@ -53,16 +55,16 @@ namespace SmartHotel.BookingService.Controllers
             if (response.Message.AvailabilityStatus !=  Service.Shared.Enum.AvailabilityStatus.AlreadyBooked)
             {
                 var bookingCommand = _mapper.Map<CreateBookingCommand>(request);
-                var bookingId = await _mediator.Send(bookingCommand);
+                var result = await _mediator.Send(bookingCommand);
                 var bookingCreatedEvent = _mapper.Map<BookingCreatedEvent>(request);
 
                 await _publishEndpoint.Publish(bookingCreatedEvent);
                 
-                return Ok(bookingId);
+                return Ok(result);
             } 
             else
             {
-                return BadRequest($"Booking is not avialbe for {request.BookingDate}");
+                return BadRequest(Outcome<Error>.Failure(BookingErrors.Unavailable(request.BookingDate)));
             }
         }
     }

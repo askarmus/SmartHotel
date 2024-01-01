@@ -1,9 +1,8 @@
 ﻿using SmartHotel.BookingService.CQRS.Queries.GetBooking.Response;
 using SmartHotel.BookingService.Repository;
 using MediatR;
-using SmartHotel.Exceptions.Abstraction;
 using Data.Entities;
-using SmartHotel.Infrastructure.Behaviors;
+using SmartHotel.Abstraction;
 
 namespace SmartHotel.BookingService.CQRS.Queries.GetBooking
 {

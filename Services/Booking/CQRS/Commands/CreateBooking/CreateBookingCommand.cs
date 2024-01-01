@@ -1,8 +1,9 @@
 ﻿using MediatR;
+using SmartHotel.Abstraction.Result;
 
 namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
 {
-    public class CreateBookingCommand : IRequest<int>
+    public class CreateBookingCommand : IRequest<Outcome<int>>
     {
         public int RoomId { get; set; }
         public DateTime BookingDate { get; set; }
@@ -10,4 +11,3 @@ namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
         public required string CreditCardNumber { get; set; }
     }
 }
-

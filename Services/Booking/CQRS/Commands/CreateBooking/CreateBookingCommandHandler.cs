@@ -3,10 +3,12 @@ using MediatR;
 using Service.Shared.Enum;
 using FluentValidation;
 using Data.Entities;
+using SmartHotel.Abstraction.Result;
+using System;
 
 namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
 {
-    public class CreateBookingCommandHandler : IRequestHandler<CreateBookingCommand, int>
+    public class CreateBookingCommandHandler : IRequestHandler<CreateBookingCommand, Outcome<int>>
     {
         private readonly IBookingRepository _repository;
         private readonly IValidator<CreateBookingCommand> _validator;
@@ -17,7 +19,7 @@ namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
             _validator = validator ;
         }
 
-        public async Task<int> Handle(CreateBookingCommand createBookingCommand, CancellationToken cancellationToken)
+        public async Task<Outcome<int>> Handle(CreateBookingCommand createBookingCommand, CancellationToken cancellationToken)
         {
             _validator.ValidateAndThrow(createBookingCommand);
 
@@ -28,7 +30,9 @@ namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
                 PaymentStatus = PaymentStatus.Pending
             };
 
-            return await _repository.CreateBookingAsync(booking);
+            var result =  await _repository.CreateBookingAsync(booking);
+
+            return Outcome<int>.Success(result);
         }
     }
 }

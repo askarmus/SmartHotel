@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SmartHotel.Exceptions.Abstraction
+namespace SmartHotel.Abstraction
 {
     public abstract class DomainException : Exception
     {
