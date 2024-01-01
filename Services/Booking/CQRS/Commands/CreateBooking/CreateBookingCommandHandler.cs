@@ -1,10 +1,10 @@
-﻿using SmartHotel.BookingService.Repository;
-using MediatR;
+﻿using MediatR;
 using Service.Shared.Enum;
 using FluentValidation;
-using Data.Entities;
 using SmartHotel.Abstraction.Result;
 using System;
+using Persistance.Repository;
+using Persistance.Entities;
 
 namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
 {

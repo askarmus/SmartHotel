@@ -8,11 +8,11 @@ using SmartHotel.Abstraction.Result;
 
 namespace SmartHotel.BookingService.CQRS.Queries.GetBooking
 {
-    public class IsRoomAvailabilityQueryHandler : IRequestHandler<IsRoomAvailabilityGuery, Outcome<IsRoomAvailabilityQueryResponse>>
+    public class GetRoomAvailabilityQueryHandler : IRequestHandler<IsRoomAvailabilityGuery, Outcome<IsRoomAvailabilityQueryResponse>>
     {
         private readonly IRoomRepository _repository;
 
-        public IsRoomAvailabilityQueryHandler(IRoomRepository repository)
+        public GetRoomAvailabilityQueryHandler(IRoomRepository repository)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }

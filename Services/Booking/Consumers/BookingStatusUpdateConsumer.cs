@@ -1,7 +1,7 @@
-﻿using SmartHotel.BookingService.Repository;
-using MassTransit;
+﻿using MassTransit;
 using Service.Shared;
 using Service.Shared.Enum;
+using Persistance.Repository;
 
 namespace SmartHotel.BookingService.Consumers
 {

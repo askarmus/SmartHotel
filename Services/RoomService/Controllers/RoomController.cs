@@ -5,6 +5,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.Shared;
+using SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities;
 
 namespace SmartHotel. BookingService.Controllers
 {
@@ -14,20 +15,18 @@ namespace SmartHotel. BookingService.Controllers
     public class RoomController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IPublishEndpoint _publishEndpoint;
 
-        public RoomController(IMediator mediator, IPublishEndpoint publishEndpoint)
+        public RoomController(IMediator mediator)
         {
-            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
-            _publishEndpoint = publishEndpoint;
+            _mediator = mediator;
         }
 
-        [HttpGet("GetBooking/{bookingId}")]
-        public async Task<IActionResult> GetBooking(int bookingId)
+        [HttpGet("GeRoomAvailability/{filter}/{page}/{orderBy}")]
+        public async Task<IActionResult> GeRoomAvailability(string filter, int page , string orderBy )
         {
-           // var result = await _mediator.Send(new GetBookingQuery { BookingId = bookingId });
+            var result = await _mediator.Send(new GetRoomAvailabilitiesQuery() { Filter = filter, Page = page, PageSize = 10 , OrderBy = orderBy });
 
-            return Ok(null);
+            return Ok(result);
         }
          
     }

@@ -1,6 +1,6 @@
-﻿using Data.Entities;
+﻿using Persistance.Entities;
 
-namespace SmartHotel.BookingService.Repository
+namespace Persistance.Repository
 {
     public interface IBookingRepository
     {

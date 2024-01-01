@@ -1,6 +1,8 @@
 ﻿using SmartHotel. BookingService.Data;
 using Microsoft.EntityFrameworkCore;
 using SmartHotel.RoomService.Data.Entities;
+using Gridify;
+using SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities;
 
 namespace SmartHotel. BookingService.Repository
 {
@@ -19,6 +21,14 @@ namespace SmartHotel. BookingService.Repository
 
             return isAvailable;
         }
+
+        public (IEnumerable<RoomAvailability>, int) GetAvailabilities(GetRoomAvailabilitiesQuery query)
+        {
+            var result = _context.RoomAvailability.Gridify(query);
+
+            return (result.Data, result.Count);
+        }
+
         public async Task<int> CreateBookingStatus(int roomId, DateTime bookingDatee)
         {
 

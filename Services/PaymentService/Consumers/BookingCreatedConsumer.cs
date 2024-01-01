@@ -17,9 +17,8 @@ namespace BookingService.Consumers
             try
             {
                 var httpClientService = new HttpClientService();
-                var requestBody = new { CreditCardNumber =  context.Message.CreditCardNumber, Amount =  context.Message.Amount };
+                var requestBody = new { context.Message.CreditCardNumber,  context.Message.Amount };
 
-                // Set a timeout for the HTTP request
                 var result = await Policy
                     .Handle<HttpRequestException>()
                     .WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)))

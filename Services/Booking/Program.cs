@@ -1,8 +1,6 @@
 
 using SmartHotel.BookingService.Consumers;
 using SmartHotel.BookingService.CQRS.Commands.CreateBooking;
-using SmartHotel.BookingService.Data;
-using SmartHotel.BookingService.Repository;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +10,8 @@ using SmartHotel.Infrastructure.Logging;
 using SmartHotel.Infrastructure.Services;
 using SmartHotel.Infrastructure.Config;
 using SmartHotel.Infrastructure.Behaviors;
+using Persistance.Repository;
+using SmartHotel.BookingService.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
  

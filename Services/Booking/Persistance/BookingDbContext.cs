@@ -1,9 +1,9 @@
-﻿using Data.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Persistance.Entities;
 using SmartHotel.Infrastructure.Perception;
 using SmartHotel.Infrastructure.Services;
 
-namespace SmartHotel.BookingService.Data
+namespace SmartHotel.BookingService.Persistance
 {
     public class BookingDbContext : BaseDbContext
     {

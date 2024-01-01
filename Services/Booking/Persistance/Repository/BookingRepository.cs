@@ -1,8 +1,8 @@
-﻿using SmartHotel.BookingService.Data;
-using Microsoft.EntityFrameworkCore;
-using Data.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Persistance.Entities;
+using SmartHotel.BookingService.Persistance;
 
-namespace SmartHotel.BookingService.Repository
+namespace Persistance.Repository
 {
     public class BookingRepository : IBookingRepository
     {
@@ -15,7 +15,7 @@ namespace SmartHotel.BookingService.Repository
 
         public async Task<Booking> GetBookingAsync(int bookingId)
         {
-            return await _context.Bookings.FirstOrDefaultAsync(w=>w.Id == bookingId);
+            return await _context.Bookings.FirstOrDefaultAsync(w => w.Id == bookingId);
         }
 
         public async Task<int> CreateBookingAsync(Booking booking)
@@ -29,7 +29,7 @@ namespace SmartHotel.BookingService.Repository
 
         public async Task UpdateBookingStatusAsync(Booking booking)
         {
-           var existingBooking = await _context.Bookings.FindAsync(booking.Id);
+            var existingBooking = await _context.Bookings.FindAsync(booking.Id);
 
             if (existingBooking != null)
             {
