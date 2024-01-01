@@ -6,6 +6,9 @@ Explore the SmartHotel Booking System, a comprehensive showcase illustrating the
 
 If you find this project useful, please give it a star. Thanks! ⭐
 
+## Pattern Used in this project
+✔️ **[`Result Pattern`]([https://dotnet.microsoft.com/download](https://www.milanjovanovic.tech/blog/functional-error-handling-in-dotnet-with-the-result-pattern))** - The "Result Pattern" is an alternative to exception-based error handling. Instead of triggering exceptions
+
 
 ## Architecture
 ![techStack](Doc/archi-diag.jpg)  
