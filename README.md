@@ -38,7 +38,12 @@ If you find this project useful, please give it a star. Thanks! ⭐
 **Availability Service:** Manages real-time room availability updates based on bookings from the Booking Service, fostering an accurate representation of room status and communicating updates to support timely decision-making.
 
 **Authentication Service:** Ensures system security by managing user authentication, validating credentials, and providing authentication tokens for secure operations, safeguarding against unauthorized access.
-    
+
+## Todo Items
+- API version
+- Saga Orchestration using MassTransit
+- Infrastructure project to deploy Azure AKS
+
 ## Authors
 
 If you have any questions or need further assistance, please contact the project author at **[`LinkedIn`](https://www.linkedin.com/in/askarmus/)**
