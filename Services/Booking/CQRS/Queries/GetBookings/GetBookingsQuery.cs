@@ -7,14 +7,14 @@ using Persistance.Repository;
 
 namespace SmartHotel.BookingService.CQRS.Queries.GetBookings
 {
-    public class GetBookingsQuery : IRequest<Outcome<List<GetBookingsQueryResponse>>>, ICachableQuery
+    public class GetBookingsQuery : IRequest<Result<List<GetBookingsQueryResponse>>>, ICachableQuery
     {
         public bool BypassCache { get; set; }
         public string CacheKey => $"booking-list";
         public TimeSpan? SlidingExpiration { get; set; }
     }
 
-    internal class GetBookingListQueryHandler : IRequestHandler<GetBookingsQuery, Outcome<List<GetBookingsQueryResponse>>>
+    internal class GetBookingListQueryHandler : IRequestHandler<GetBookingsQuery, Result<List<GetBookingsQueryResponse>>>
     {
         private readonly IBookingRepository _repository;
 
@@ -23,7 +23,7 @@ namespace SmartHotel.BookingService.CQRS.Queries.GetBookings
             _repository = repository;
         }
 
-        public async Task<Outcome<List<GetBookingsQueryResponse>>> Handle(GetBookingsQuery request, CancellationToken cancellationToken)
+        public async Task<Result<List<GetBookingsQueryResponse>>> Handle(GetBookingsQuery request, CancellationToken cancellationToken)
         {
             var bookings = await _repository.GetBookingsAsync();
 
@@ -35,7 +35,7 @@ namespace SmartHotel.BookingService.CQRS.Queries.GetBookings
                 PaymentStatus = booking.PaymentStatus.ToString()
             }).ToList();
 
-            return  Outcome<List<GetBookingsQueryResponse>>.Success(getBookingQueryResponses);
+            return  Result<List<GetBookingsQueryResponse>>.Success(getBookingQueryResponses);
         }
 
     }

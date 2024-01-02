@@ -8,7 +8,7 @@ using SmartHotel.Abstraction.Result;
 
 namespace SmartHotel.BookingService.CQRS.Queries.GetBooking
 {
-    public class GetRoomAvailabilityQueryHandler : IRequestHandler<IsRoomAvailabilityGuery, Outcome<IsRoomAvailabilityQueryResponse>>
+    public class GetRoomAvailabilityQueryHandler : IRequestHandler<IsRoomAvailabilityGuery, Result<IsRoomAvailabilityQueryResponse>>
     {
         private readonly IRoomRepository _repository;
 
@@ -17,13 +17,13 @@ namespace SmartHotel.BookingService.CQRS.Queries.GetBooking
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        public async Task<Outcome<IsRoomAvailabilityQueryResponse>> Handle(IsRoomAvailabilityGuery request, CancellationToken cancellationToken)
+        public async Task<Result<IsRoomAvailabilityQueryResponse>> Handle(IsRoomAvailabilityGuery request, CancellationToken cancellationToken)
         {
             var isAvailable =  await _repository.IsRoomAvailable(request.RoomId, request.BookingDate);
             if (!isAvailable)
                 throw new NotFoundException(request.RoomId.ToString(), nameof(RoomAvailability));
 
-            return  Outcome<IsRoomAvailabilityQueryResponse>.Success( new IsRoomAvailabilityQueryResponse(isAvailable));
+            return  Result<IsRoomAvailabilityQueryResponse>.Success( new IsRoomAvailabilityQueryResponse(isAvailable));
         }
     }
 }

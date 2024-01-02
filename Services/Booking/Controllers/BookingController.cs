@@ -64,7 +64,7 @@ namespace SmartHotel.BookingService.Controllers
             } 
             else
             {
-                return BadRequest(Outcome<Error>.Failure(BookingErrors.Unavailable(request.BookingDate)));
+                return BadRequest(Result<Error>.Failure(BookingErrors.Unavailable(request.BookingDate)));
             }
         }
     }

@@ -3,7 +3,7 @@ using SmartHotel.Abstraction.Result;
 
 namespace SmartHotel.BookingService.CQRS.Commands.CreateBooking
 {
-    public class CreateBookingCommand : IRequest<Outcome<int>>
+    public class CreateBookingCommand : IRequest<Result<int>>
     {
         public int RoomId { get; set; }
         public DateTime BookingDate { get; set; }
