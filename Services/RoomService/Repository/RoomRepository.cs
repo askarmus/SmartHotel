@@ -4,7 +4,7 @@ using SmartHotel.RoomService.Data.Entities;
 using Gridify;
 using SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities;
 
-namespace SmartHotel. BookingService.Repository
+namespace SmartHotel.BookingService.Repository
 {
     public class RoomRepository : IRoomRepository
     {
@@ -31,7 +31,6 @@ namespace SmartHotel. BookingService.Repository
 
         public async Task<int> CreateBookingStatus(int roomId, DateTime bookingDatee)
         {
-
             var roomAvailability = new RoomAvailability()
             {
                 BookingDate = bookingDatee,
@@ -41,7 +40,6 @@ namespace SmartHotel. BookingService.Repository
             };
 
             await _context.RoomAvailability.AddAsync(roomAvailability);
-
             await _context.SaveChangesAsync();
 
             return roomAvailability.RoomAvailabilityId;

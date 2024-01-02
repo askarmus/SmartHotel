@@ -8,7 +8,7 @@ namespace SmartHotel.RoomService.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<RoomAvailability, GetRoomAvailabilitiesQueryResponse>();
+            CreateMap<RoomAvailability, RoomAvailabilityDto>();
         }
     }
 }

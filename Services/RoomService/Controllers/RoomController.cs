@@ -10,7 +10,7 @@ using SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities;
 namespace SmartHotel. BookingService.Controllers
 {
     [ApiController]
-    [Authorize]
+   // [Authorize]
     [Route("api/[controller]")]
     public class RoomController : ControllerBase
     {
@@ -21,10 +21,10 @@ namespace SmartHotel. BookingService.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("GeRoomAvailability/{filter}/{page}/{orderBy}")]
-        public async Task<IActionResult> GeRoomAvailability(string filter, int page , string orderBy )
+        [HttpGet("GetRoomAvailability/{filter}/{page}/{orderBy}")]
+        public async Task<IActionResult> GetRoomAvailability(string filter, int page , int pageSize ,  string orderBy )
         {
-            var result = await _mediator.Send(new GetRoomAvailabilitiesQuery() { Filter = filter, Page = page, PageSize = 10 , OrderBy = orderBy });
+            var result = await _mediator.Send(new GetRoomAvailabilitiesQuery() { Filter = filter, Page = page, PageSize = pageSize, OrderBy = orderBy });
 
             return Ok(result);
         }

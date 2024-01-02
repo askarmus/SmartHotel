@@ -7,7 +7,7 @@ using AutoMapper;
 
 namespace SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities
 {
-    public class GetRoomAvailabilitiesQueryHandler : IRequestHandler<GetRoomAvailabilitiesQuery, Outcome<(List<GetRoomAvailabilitiesQueryResponse>,int)>>
+    public class GetRoomAvailabilitiesQueryHandler : IRequestHandler<GetRoomAvailabilitiesQuery, Outcome<GetRoomAvailabilitiesQueryResponse>>
     {
         private readonly IRoomRepository _repository;
         private readonly IMapper _mapper;
@@ -18,14 +18,13 @@ namespace SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities
             _mapper = mapper;
         }
 
-        public async Task<Outcome<(List<GetRoomAvailabilitiesQueryResponse>, int)>> Handle(GetRoomAvailabilitiesQuery request, CancellationToken cancellationToken)
+        public async Task<Outcome<GetRoomAvailabilitiesQueryResponse>> Handle(GetRoomAvailabilitiesQuery request, CancellationToken cancellationToken)
         {
-            var result = _repository.GetAvailabilities(request);
+            var (availabilities, totalCount) = _repository.GetAvailabilities(request);
 
-            // Use AutoMapper to map the entities
-            var roomAvailabilities = result.Item1.Select(response => _mapper.Map<GetRoomAvailabilitiesQueryResponse>(response)).ToList();
+            var roomAvailabilities = availabilities.Select(response => _mapper.Map<RoomAvailabilityDto>(response)).ToList();
 
-            return Outcome<(List<GetRoomAvailabilitiesQueryResponse>, int)>.Success((roomAvailabilities, result.Item2));
+            return Outcome<GetRoomAvailabilitiesQueryResponse>.Success(new GetRoomAvailabilitiesQueryResponse(roomAvailabilities, totalCount));
 
         }
     }

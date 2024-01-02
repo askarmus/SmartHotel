@@ -41,67 +41,22 @@
       ],
       "DownstreamPathTemplate": "/api/Booking/GetBookings"
     },
-    //Room Availability
+    
+    //Room
+
     {
-      "UpstreamPathTemplate": "/api/RoomAvailability/GetRoomAvailability/{id}",
+      "UpstreamPathTemplate": "/api/room/GetRoomAvailability/{filter}/{page}/{orderBy}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5261
+          "Port": 5082
         }
       ],
-      "DownstreamPathTemplate": "/api/RoomAvailability/GetRoomAvailability/{id}"
+      "DownstreamPathTemplate": "/api/room/GetRoomAvailability/{filter}/{page}/{orderBy}"
     },
-    {
-      "UpstreamPathTemplate": "/api/RoomAvailability/GetRoomAvailabilitiesByDate",
-      "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5261
-        }
-      ],
-      "DownstreamPathTemplate": "/api/RoomAvailability/GetRoomAvailabilitiesByDate"
-    },
-    {
-      "UpstreamPathTemplate": "/api/RoomAvailability/CreateRoomAvailability",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5261
-        }
-      ],
-      "DownstreamPathTemplate": "/api/RoomAvailability/CreateRoomAvailability"
-    },
-    {
-      "UpstreamPathTemplate": "/api/RoomAvailability/UpdateRoomAvailability",
-      "UpstreamHttpMethod": [ "Put" ],
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5261
-        }
-      ],
-      "DownstreamPathTemplate": "/api/RoomAvailability/UpdateRoomAvailability"
-    },
-    {
-      "UpstreamPathTemplate": "/api/RoomAvailability/DeleteRoomAvailability",
-      "UpstreamHttpMethod": [ "Delete" ],
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5261
-        }
-      ],
-      "DownstreamPathTemplate": "/api/RoomAvailability/DeleteRoomAvailability"
-    },
+    
 
     //Authendication
     {
