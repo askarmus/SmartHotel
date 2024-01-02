@@ -43,6 +43,7 @@ If you find this project useful, please give it a star. Thanks! ⭐
 - API version
 - Saga Orchestration using MassTransit
 - Infrastructure project to deploy Azure AKS
+- Reduce a Significant part of your code by using Primary Constructors.
 
 ## Authors
 
