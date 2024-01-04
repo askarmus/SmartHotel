@@ -1,10 +1,10 @@
 ﻿using SmartHotel.BookingService.CQRS.Queries.IsRoomAvailable;
 using SmartHotel.BookingService.CQRS.Queries.IsRoomAvailable.Response;
-using SmartHotel.BookingService.Repository;
 using MediatR;
 using SmartHotel.Abstraction;
-using SmartHotel.RoomService.Data.Entities;
 using SmartHotel.Abstraction.Result;
+using SmartHotel.RoomService.Persistance.Repository;
+using SmartHotel.RoomService.Persistance.Entities;
 
 namespace SmartHotel.BookingService.CQRS.Queries.GetBooking
 {

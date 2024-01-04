@@ -1,29 +1,19 @@
 ﻿using SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities.Response;
-using SmartHotel.BookingService.Repository;
 using MediatR;
 using SmartHotel.Abstraction.Result;
 using AutoMapper;
+using SmartHotel.RoomService.Persistance.Repository;
 
-namespace SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities
+namespace SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities;
+
+public class GetRoomAvailabilitiesQueryHandler(IRoomRepository _repository, IMapper _mapper) : IRequestHandler<GetRoomAvailabilitiesQuery, Result<GetRoomAvailabilitiesQueryResponse>>
 {
-    public class GetRoomAvailabilitiesQueryHandler : IRequestHandler<GetRoomAvailabilitiesQuery, Result<GetRoomAvailabilitiesQueryResponse>>
+    public async Task<Result<GetRoomAvailabilitiesQueryResponse>> Handle(GetRoomAvailabilitiesQuery request, CancellationToken cancellationToken)
     {
-        private readonly IRoomRepository _repository;
-        private readonly IMapper _mapper;
+        var (availabilities, totalCount) = _repository.GetAvailabilities(request);
 
-        public GetRoomAvailabilitiesQueryHandler(IRoomRepository repository, IMapper mapper)
-        {
-            _repository = repository;
-            _mapper = mapper;
-        }
+        var roomAvailabilities = availabilities.Select(response => _mapper.Map<RoomAvailabilityDto>(response)).ToList();
 
-        public async Task<Result<GetRoomAvailabilitiesQueryResponse>> Handle(GetRoomAvailabilitiesQuery request, CancellationToken cancellationToken)
-        {
-            var (availabilities, totalCount) = _repository.GetAvailabilities(request);
-
-            var roomAvailabilities = availabilities.Select(response => _mapper.Map<RoomAvailabilityDto>(response)).ToList();
-
-            return Result<GetRoomAvailabilitiesQueryResponse>.Success(new GetRoomAvailabilitiesQueryResponse(roomAvailabilities, totalCount));
-        }
+        return Result<GetRoomAvailabilitiesQueryResponse>.Success(new GetRoomAvailabilitiesQueryResponse(roomAvailabilities, totalCount));
     }
 }

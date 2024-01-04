@@ -1,7 +1,7 @@
 ﻿using Service.Shared.Enum;
 using System.ComponentModel.DataAnnotations;
 
-namespace SmartHotel.RoomService.Data.Entities
+namespace SmartHotel.RoomService.Persistance.Entities
 {
     public class RoomAvailability
     {

@@ -31,6 +31,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Shared", "Services\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel.Core", "BuildingBlock\SmartTicket.Core\SmartHotel.Core.csproj", "{83CD9A1A-DD23-45E9-B151-3C8F3D42F3D4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{896DCA12-7B61-4C78-9CAA-D70829224AB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingService.Testing", "UnitTest\BookingService.Testing\BookingService.Testing.csproj", "{57685EAA-9DED-4F5A-A8AD-77164AEB2AED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,10 @@ Global
 		{83CD9A1A-DD23-45E9-B151-3C8F3D42F3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83CD9A1A-DD23-45E9-B151-3C8F3D42F3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83CD9A1A-DD23-45E9-B151-3C8F3D42F3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57685EAA-9DED-4F5A-A8AD-77164AEB2AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57685EAA-9DED-4F5A-A8AD-77164AEB2AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57685EAA-9DED-4F5A-A8AD-77164AEB2AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57685EAA-9DED-4F5A-A8AD-77164AEB2AED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +105,7 @@ Global
 		{B9432CE6-9F59-40D2-AAE2-73F3E7B626B4} = {BBCE1F6C-562C-4567-8E5F-8E3AB5D9C784}
 		{2118B64C-04E5-425D-A2E3-736AD2179B97} = {BEB12525-6CCB-4AF8-A0DB-A36935DCEB7B}
 		{83CD9A1A-DD23-45E9-B151-3C8F3D42F3D4} = {F9D7F82C-F6D5-47F8-BECB-E42B013A96C6}
+		{57685EAA-9DED-4F5A-A8AD-77164AEB2AED} = {896DCA12-7B61-4C78-9CAA-D70829224AB0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E627DB1E-A376-483C-AE15-3DBAA7FB83AB}

@@ -16,20 +16,8 @@ namespace SmartHotel.BookingService.Controllers
     [ApiController]
     [Authorize]
     [Route("api/[controller]")]
-    public class BookingController : ControllerBase
+    public class BookingController(IMediator _mediator, IMapper _mapper, IPublishEndpoint _publishEndpoint, IRequestClient<AvailabilityUpdatedEvent> _client) : ControllerBase
     {
-        private readonly IMediator _mediator;
-        private readonly IPublishEndpoint _publishEndpoint;
-        private readonly IRequestClient<AvailabilityUpdatedEvent> _client;
-        private readonly IMapper _mapper;
-
-        public BookingController(IMediator mediator, IMapper mapper,  IPublishEndpoint publishEndpoint, IRequestClient<AvailabilityUpdatedEvent> client)
-        {
-            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
-            _publishEndpoint = publishEndpoint;
-            _client = client;
-            _mapper = mapper;
-        }
 
         [HttpGet("GetBooking/{bookingId}")]
         public async Task<IActionResult> GetBooking(int bookingId)

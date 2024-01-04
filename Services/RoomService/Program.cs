@@ -1,7 +1,5 @@
 
 using SmartHotel.BookingService.Consumers;
-using SmartHotel.BookingService.Data;
-using SmartHotel.BookingService.Repository;
 using MassTransit;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +7,8 @@ using SmartHotel.Infrastructure.AuthenticationManager;
 using SmartHotel.Infrastructure.Exceptions;
 using SmartHotel.Infrastructure.Logging;
 using System.Reflection;
+using SmartHotel.RoomService.Persistance.Repository;
+using SmartHotel.RoomService.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DbConnection");

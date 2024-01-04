@@ -1,12 +1,10 @@
 ﻿
-namespace SmartHotel. BookingService.CQRS.Queries.IsRoomAvailable.Response
+namespace SmartHotel. BookingService.CQRS.Queries.IsRoomAvailable.Response;
+public class IsRoomAvailabilityQueryResponse
 {
-    public class IsRoomAvailabilityQueryResponse
+    public IsRoomAvailabilityQueryResponse(bool isAvailable)
     {
-        public IsRoomAvailabilityQueryResponse(bool isAvailable)
-        {
-            isAvailable = isAvailable;
-        }
-        public int isAvailable { get; }
+        isAvailable = isAvailable;
     }
+    public int isAvailable { get; }
 }

@@ -1,10 +1,9 @@
-﻿using SmartHotel. BookingService.Data;
-using Microsoft.EntityFrameworkCore;
-using SmartHotel.RoomService.Data.Entities;
+﻿using Microsoft.EntityFrameworkCore;
 using Gridify;
 using SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities;
+using SmartHotel.RoomService.Persistance.Entities;
 
-namespace SmartHotel.BookingService.Repository
+namespace SmartHotel.RoomService.Persistance.Repository
 {
     public class RoomRepository : IRoomRepository
     {

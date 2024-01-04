@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities.Response;
-using SmartHotel.RoomService.Data.Entities;
+using SmartHotel.RoomService.Persistance.Entities;
 
 namespace SmartHotel.RoomService.AutoMapper
 {

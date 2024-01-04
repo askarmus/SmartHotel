@@ -1,8 +1,7 @@
-﻿
-using SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities;
-using SmartHotel.RoomService.Data.Entities;
+﻿using SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities;
+using SmartHotel.RoomService.Persistance.Entities;
 
-namespace SmartHotel. BookingService.Repository
+namespace SmartHotel.RoomService.Persistance.Repository
 {
     public interface IRoomRepository
     {

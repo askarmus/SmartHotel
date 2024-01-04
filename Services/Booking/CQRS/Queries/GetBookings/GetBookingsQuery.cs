@@ -2,11 +2,10 @@
 using SmartHotel.BookingService.CQRS.Queries.GetBookings.Response;
 using SmartHotel.Abstraction;
 using SmartHotel.Abstraction.Result;
-using System.Collections.Generic;
 using Persistance.Repository;
 
-namespace SmartHotel.BookingService.CQRS.Queries.GetBookings
-{
+namespace SmartHotel.BookingService.CQRS.Queries.GetBookings;
+
     public class GetBookingsQuery : IRequest<Result<List<GetBookingsQueryResponse>>>, ICachableQuery
     {
         public bool BypassCache { get; set; }
@@ -14,29 +13,20 @@ namespace SmartHotel.BookingService.CQRS.Queries.GetBookings
         public TimeSpan? SlidingExpiration { get; set; }
     }
 
-    internal class GetBookingListQueryHandler : IRequestHandler<GetBookingsQuery, Result<List<GetBookingsQueryResponse>>>
+internal class GetBookingListQueryHandler(IBookingRepository _repository) : IRequestHandler<GetBookingsQuery, Result<List<GetBookingsQueryResponse>>>
+{
+    public async Task<Result<List<GetBookingsQueryResponse>>> Handle(GetBookingsQuery request, CancellationToken cancellationToken)
     {
-        private readonly IBookingRepository _repository;
+        var bookings = await _repository.GetBookingsAsync();
 
-        public GetBookingListQueryHandler(IBookingRepository repository)
+        var getBookingQueryResponses = bookings.Select(booking => new GetBookingsQueryResponse
         {
-            _repository = repository;
-        }
+            BookingId = booking.Id,
+            RoomId = booking.RoomId,
+            BookingDate = booking.BookingDate,
+            PaymentStatus = booking.PaymentStatus.ToString()
+        }).ToList();
 
-        public async Task<Result<List<GetBookingsQueryResponse>>> Handle(GetBookingsQuery request, CancellationToken cancellationToken)
-        {
-            var bookings = await _repository.GetBookingsAsync();
-
-            var getBookingQueryResponses = bookings.Select(booking => new GetBookingsQueryResponse
-            {
-                BookingId = booking.Id,
-                RoomId = booking.RoomId,
-                BookingDate = booking.BookingDate,
-                PaymentStatus = booking.PaymentStatus.ToString()
-            }).ToList();
-
-            return  Result<List<GetBookingsQueryResponse>>.Success(getBookingQueryResponses);
-        }
-
+        return Result<List<GetBookingsQueryResponse>>.Success(getBookingQueryResponses);
     }
 }
