@@ -44,6 +44,7 @@ If you find this project useful, please give it a star. Thanks! ⭐
 - Saga Orchestration using MassTransit
 - Infrastructure project to deploy Azure AKS
 - Reduce a Significant part of code by using Primary Constructors.
+- Add unit testing proejct for all services.
 
 ## Authors
 
