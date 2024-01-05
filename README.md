@@ -27,6 +27,8 @@ If you find this project useful, please give it a star. Thanks! ⭐
 - ✔️ **[`Polly`](https://github.com/App-vNext/Polly)** - Polly is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner
 - ✔️ **[`RabbitMQ`](https://automapper.org)** - RabbitMQ is an open-source message-broker
 - ✔️ **[`MassTransit`](https://masstransit.io/)** - MassTransit provides a developer-focused, modern platform for creating distributed applications without complexity.
+- ✔️ **[`Mog`](https://github.com/devlooped/moq)** - The most popular and friendly mocking library for .NET.
+- ✔️ **[`NUite`](https://nunit.org/)** - NUnit is a unit-testing framework for all .Net languages.
 
 ![techStack](Doc/techStack.png)  
 
