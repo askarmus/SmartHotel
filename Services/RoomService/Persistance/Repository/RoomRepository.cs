@@ -5,15 +5,8 @@ using SmartHotel.RoomService.Persistance.Entities;
 
 namespace SmartHotel.RoomService.Persistance.Repository
 {
-    public class RoomRepository : IRoomRepository
+    public class RoomRepository(RoomDbContext _context) : IRoomRepository
     {
-        private readonly RoomDbContext _context;
-
-        public RoomRepository(RoomDbContext context)
-        {
-            _context = context ?? throw new ArgumentNullException(nameof(context));
-        }
-
         public async Task<bool> IsRoomAvailable(int roomId, DateTime bookingDate)
         {
             var isAvailable = await _context.RoomAvailability.AnyAsync(a => a.RoomId == roomId && a.BookingDate.Date == bookingDate.Date);

@@ -4,15 +4,8 @@ using SmartHotel.BookingService.Persistance;
 
 namespace Persistance.Repository
 {
-    public class BookingRepository : IBookingRepository
+    public class BookingRepository(BookingDbContext _context) : IBookingRepository
     {
-        private readonly BookingDbContext _context;
-
-        public BookingRepository(BookingDbContext context)
-        {
-            _context = context ?? throw new ArgumentNullException(nameof(context));
-        }
-
         public async Task<Booking> GetBookingAsync(int bookingId)
         {
             return await _context.Bookings.FirstOrDefaultAsync(w => w.Id == bookingId);
