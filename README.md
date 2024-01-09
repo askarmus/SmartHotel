@@ -6,6 +6,7 @@ Explore the SmartHotel Booking System, a comprehensive showcase illustrating the
 
 If you find this project useful, please give it a star. Thanks! ⭐
 
+
 ## Pattern Used in this project
 🏁 **[`Result Pattern`]([https://dotnet.microsoft.com/download](https://www.milanjovanovic.tech/blog/functional-error-handling-in-dotnet-with-the-result-pattern))** - The "Result Pattern" is an alternative to exception-based error handling. Instead of triggering exceptions
 
@@ -41,7 +42,7 @@ If you find this project useful, please give it a star. Thanks! ⭐
 
 **Authentication Service:** Ensures system security by managing user authentication, validating credentials, and providing authentication tokens for secure operations, safeguarding against unauthorized access.
 
-## Todo Items
+## ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) Todo Items
 - API version
 - Saga Orchestration using MassTransit
 - Infrastructure project to deploy Azure AKS
