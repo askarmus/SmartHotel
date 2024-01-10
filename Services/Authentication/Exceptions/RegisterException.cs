@@ -2,13 +2,12 @@
 using Microsoft.AspNetCore.Identity;
 using SmartHotel.Abstraction;
 
-namespace SmartHotel.AuthenticationService.Exceptions
+namespace SmartHotel.AuthenticationService.Exceptions; 
+
+public class RegisterException : SmartHotelValidationException
 {
-    public class RegisterException : SmartHotelValidationException
+    public RegisterException(IEnumerable<IdentityError> errors) : base("Unable to register account.", 102)
     {
-        public RegisterException(IEnumerable<IdentityError> errors) : base("Unable to register account.", 102)
-        {
-            ValidationMessages = errors.Select(x => x.Description).ToList();
-        }
+        ValidationMessages = errors.Select(x => x.Description).ToList();
     }
 }

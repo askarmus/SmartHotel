@@ -27,13 +27,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\BuildingBlock\SmartTicket.Exceptions.Abstraction\SmartHotel.Abstraction.csproj" />
     <ProjectReference Include="..\..\BuildingBlock\SmartTicket.Infrastructure\SmartHotel.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\SmartTicket.Core\SmartHotel.Core.csproj" />
   </ItemGroup>
 
 </Project>

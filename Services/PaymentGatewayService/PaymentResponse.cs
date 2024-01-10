@@ -1,12 +1,11 @@
 ﻿using static FakePaymentGatewayService.Controllers.PaymentController;
 
-namespace FakePaymentGatewayService
+namespace FakePaymentGatewayService;
+
+public class PaymentResponse
 {
-    public class PaymentResponse
-    {
-        public PaymentStatus PaymentStatus { get; set; }
-        public string TransactionId { get; set; }
-    }
+    public PaymentStatus PaymentStatus { get; set; }
+    public string TransactionId { get; set; }
 }
 
 

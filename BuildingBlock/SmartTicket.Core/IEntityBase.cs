@@ -1,17 +1,16 @@
-﻿namespace SmartHotel.Core
+﻿namespace SmartHotel.Core;
+
+public interface IEntityBase
 {
-    public interface IEntityBase
-    {
-        int Id { get; set; }
+    int Id { get; set; }
 
-        bool IsDeleted { get; set; }
+    bool IsDeleted { get; set; }
 
-        DateTimeOffset CreatedOn { get; set; }
+    DateTimeOffset CreatedOn { get; set; }
 
-        string CreatedBy { get; set; }
+    string CreatedBy { get; set; }
 
-        DateTimeOffset UpdatedOn { get; set; }
+    DateTimeOffset UpdatedOn { get; set; }
 
-        string UpdatedBy { get; set; }
-    }
+    string UpdatedBy { get; set; }
 }

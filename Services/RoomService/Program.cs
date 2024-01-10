@@ -1,7 +1,5 @@
 
 using SmartHotel.BookingService.Consumers;
-using MassTransit;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SmartHotel.Infrastructure.AuthenticationManager;
 using SmartHotel.Infrastructure.Exceptions;

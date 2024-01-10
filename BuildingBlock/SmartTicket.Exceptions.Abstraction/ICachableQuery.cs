@@ -1,11 +1,10 @@
 ﻿using System;
 
-namespace SmartHotel.Abstraction
+namespace SmartHotel.Abstraction;
+
+public interface ICachableQuery
 {
-    public interface ICachableQuery
-    {
-        bool BypassCache { get; }
-        string CacheKey { get; }
-        TimeSpan? SlidingExpiration { get; }
-    }
+    bool BypassCache { get; }
+    string CacheKey { get; }
+    TimeSpan? SlidingExpiration { get; }
 }

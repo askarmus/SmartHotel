@@ -1,6 +1,4 @@
-﻿using MassTransit;
-using Service.Shared;
-using Service.Shared.Enum;
+﻿using Service.Shared.Enum;
 using SmartHotel.RoomService.Persistance.Repository;
 
 namespace SmartHotel.BookingService.Consumers;

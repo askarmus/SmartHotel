@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace SmartHotel.Abstraction
+namespace SmartHotel.Abstraction;
+
+public abstract class DomainException : Exception
 {
-    public abstract class DomainException : Exception
+    public int ExceptionCode { get; }
+    public DomainException(string message, int exceptionCode) : base(message)
     {
-        public int ExceptionCode { get; }
-        public DomainException(string message, int exceptionCode) : base(message)
-        {
-            ExceptionCode = exceptionCode;
-        }
+        ExceptionCode = exceptionCode;
     }
 }

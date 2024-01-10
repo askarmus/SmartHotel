@@ -1,20 +1,17 @@
-﻿using MediatR;
+﻿namespace SmartHotel.AuthenticationService.CQRS.Commands.Register;
 
-namespace SmartHotel.AuthenticationService.CQRS.Commands.Register
+public class RegisterUserCommand : IRequest
 {
-    public class RegisterUserCommand : IRequest
+    public RegisterUserCommand(string userName, string password, string name, string surname)
     {
-        public RegisterUserCommand(string userName, string password, string name, string surname)
-        {
-            UserName = userName;
-            Password = password;
-            Name = name;
-            Surname = surname;
-        }
-
-        public string UserName { get; }
-        public string Password { get; }
-        public string Name { get; }
-        public string Surname { get; }
+        UserName = userName;
+        Password = password;
+        Name = name;
+        Surname = surname;
     }
+
+    public string UserName { get; }
+    public string Password { get; }
+    public string Name { get; }
+    public string Surname { get; }
 }

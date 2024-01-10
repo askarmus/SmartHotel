@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 
-namespace SmartHotel.AuthenticationService.Services.JwtService
+namespace SmartHotel.AuthenticationService.Services.JwtService;
+
+public interface IJwtService
 {
-    public interface IJwtService
-    {
-        string GenerateJwt(List<Claim> claims);
-    }
+    string GenerateJwt(List<Claim> claims);
 }

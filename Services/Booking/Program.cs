@@ -1,8 +1,5 @@
 
 using SmartHotel.BookingService.Consumers;
-using SmartHotel.BookingService.CQRS.Commands.CreateBooking;
-using FluentValidation;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SmartHotel.Infrastructure.AuthenticationManager;
 using SmartHotel.Infrastructure.Exceptions;

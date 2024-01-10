@@ -1,14 +1,12 @@
-﻿using AutoMapper;
-using SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities.Response;
+﻿using SmartHotel.BookingService.CQRS.Queries.GetRoomAvailabilities.Response;
 using SmartHotel.RoomService.Persistance.Entities;
 
-namespace SmartHotel.RoomService.AutoMapper
+namespace SmartHotel.RoomService.AutoMapper;
+
+public class MappingProfile : Profile
 {
-    public class MappingProfile : Profile
+    public MappingProfile()
     {
-        public MappingProfile()
-        {
-            CreateMap<RoomAvailability, RoomAvailabilityDto>();
-        }
+        CreateMap<RoomAvailability, RoomAvailabilityDto>();
     }
 }

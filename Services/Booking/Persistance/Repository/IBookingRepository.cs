@@ -1,12 +1,11 @@
 ﻿using Persistance.Entities;
 
-namespace Persistance.Repository
+namespace Persistance.Repository;
+
+public interface IBookingRepository
 {
-    public interface IBookingRepository
-    {
-        Task<Booking> GetBookingAsync(int bookingId);
-        Task<List<Booking>> GetBookingsAsync();
-        Task UpdateBookingStatusAsync(Booking booking);
-        Task<int> CreateBookingAsync(Booking booking);
-    }
+    Task<Booking> GetBookingAsync(int bookingId);
+    Task<List<Booking>> GetBookingsAsync();
+    Task UpdateBookingStatusAsync(Booking booking);
+    Task<int> CreateBookingAsync(Booking booking);
 }

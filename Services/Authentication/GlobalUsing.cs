@@ -1,0 +1,9 @@
+﻿global using MediatR;
+global using Microsoft.AspNetCore.Mvc;
+global using SmartHotel.AuthenticationService.CQRS.Commands.Register;
+global using SmartHotel.AuthenticationService.CQRS.Commands.Register.Requests;
+global using SmartHotel.AuthenticationService.CQRS.Queries.GetUserDetails;
+global using SmartHotel.AuthenticationService.CQRS.Queries.Login;
+global using SmartHotel.AuthenticationService.CQRS.Queries.Login.Requests;
+global using SmartHotel.AuthenticationService.CQRS.Queries.Login.Responses;
+global using SmartHotel.AuthenticationService.DTO;

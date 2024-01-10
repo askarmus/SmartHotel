@@ -1,0 +1,12 @@
+﻿global using SmartHotel.BookingService.CQRS.Commands.CreateBooking;
+global using SmartHotel.BookingService.CQRS.Commands.CreateBooking.Request;
+global using SmartHotel.BookingService.CQRS.Queries.GetBooking;
+global using MassTransit;
+global using MediatR;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using Service.Shared;
+global using SmartHotel.BookingService.CQRS.Queries.GetBookings;
+global using AutoMapper;
+global using SmartHotel.Abstraction.Result;
+global using FluentValidation;

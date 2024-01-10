@@ -1,4 +1,3 @@
-using SmartHotel.AuthenticationService.CQRS.Queries.GetUserDetails;
 using SmartHotel.AuthenticationService.Entities;
 using SmartHotel.AuthenticationService.Services;
 using SmartHotel.AuthenticationService.Services.JwtService;

@@ -1,10 +1,9 @@
 ﻿using SmartHotel.BookingService.CQRS.Queries.GetBooking.Response;
-using MediatR;
 using SmartHotel.Abstraction;
 using Persistance.Repository;
 using Persistance.Entities;
 
-namespace SmartHotel.BookingService.CQRS.Queries.GetBooking;  
+namespace SmartHotel.BookingService.CQRS.Queries.GetBooking;
 
 public class GetBookingQuery() : IRequest<GetBookingQueryResponse>, ICachableQuery
 {

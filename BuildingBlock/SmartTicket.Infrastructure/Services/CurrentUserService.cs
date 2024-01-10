@@ -1,37 +1,26 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Linq;
+﻿namespace SmartHotel.Infrastructure.Services;
 
-namespace SmartHotel.Infrastructure.Services
+public class CurrentUserService(IHttpContextAccessor _httpContextAccessor) : ICurrentUserService
 {
-    public class CurrentUserService : ICurrentUserService
+
+    public IHttpContextAccessor Get_httpContextAccessor()
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        return _httpContextAccessor;
+    }
 
-        public CurrentUserService(IHttpContextAccessor httpContextAccessor)
+    public IUserSession GetCurrentUser()
+    {
+        if (_httpContextAccessor?.HttpContext != null)
         {
-            _httpContextAccessor = httpContextAccessor;
-        }
-
-        public IHttpContextAccessor Get_httpContextAccessor()
-        {
-            return _httpContextAccessor;
-        }
-
-        public IUserSession GetCurrentUser()
-        {
-            if (_httpContextAccessor?.HttpContext != null)
+           return  new UserSession
             {
-               return  new UserSession
-                {
-                    UserId = Guid.Parse(_httpContextAccessor.HttpContext.User.Claims.First(x => x.Type == "UserId").Value),
-                    LoginName = _httpContextAccessor.HttpContext.User.Identity.Name,
-                    Role = "User",
-                };
-            }
-
-            return new UserSession();
-
+                UserId = Guid.Parse(_httpContextAccessor.HttpContext.User.Claims.First(x => x.Type == "UserId").Value),
+                LoginName = _httpContextAccessor.HttpContext.User.Identity.Name,
+                Role = "User",
+            };
         }
+
+        return new UserSession();
+
     }
 }

@@ -1,9 +1,8 @@
-﻿namespace FakePaymentGatewayService
+﻿namespace FakePaymentGatewayService;
+
+public class PaymentRequest
 {
-    public class PaymentRequest
-    {
-        public string CreditCardNumber { get; set; }
-        public decimal Amount { get; set; }
-    }
+    public string CreditCardNumber { get; set; }
+    public decimal Amount { get; set; }
 }
 

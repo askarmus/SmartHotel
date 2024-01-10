@@ -1,33 +1,30 @@
-﻿using MassTransit;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace SmartHotel.Infrastructure.Config
+namespace SmartHotel.Infrastructure.Config;
+
+public static class RabbitMQConfig
 {
-    public static class RabbitMQConfig
+    public static void ConfigureMassTransit<TConsumer>(this IServiceCollection services, ConfigurationManager configurationManager) where TConsumer : class, IConsumer
     {
-        public static void ConfigureMassTransit<TConsumer>(this IServiceCollection services, ConfigurationManager configurationManager) where TConsumer : class, IConsumer
+        services.AddMassTransit(x =>
         {
-            services.AddMassTransit(x =>
+            x.AddConsumer<TConsumer>();
+            x.UsingRabbitMq((context, cfg) =>
             {
-                x.AddConsumer<TConsumer>();
-                x.UsingRabbitMq((context, cfg) =>
+                cfg.Host(configurationManager["RabbitMQ:Host"], host =>
                 {
-                    cfg.Host(configurationManager["RabbitMQ:Host"], host =>
-                    {
-                        host.Username(configurationManager["RabbitMQ:UserName"]);
-                        host.Password(configurationManager["RabbitMQ:Password"]);
-                    });
-                    cfg.ReceiveEndpoint($"queue-{typeof(TConsumer).Name}", e =>
-                    {
-                        e.ConfigureConsumer<TConsumer>(context);
-                    });
+                    host.Username(configurationManager["RabbitMQ:UserName"]);
+                    host.Password(configurationManager["RabbitMQ:Password"]);
+                });
+                cfg.ReceiveEndpoint($"queue-{typeof(TConsumer).Name}", e =>
+                {
+                    e.ConfigureConsumer<TConsumer>(context);
                 });
             });
-        }
-
-
-
-
+        });
     }
+
+
+
+
 }
