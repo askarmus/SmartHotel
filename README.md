@@ -1,4 +1,4 @@
-# SmartHotel: Microservice Clean Architecture Project using .NET Core 8
+# .NET CORE 8.0 Microservices Clean Architecture Boilerplate
 
 ## Overview
 
@@ -7,7 +7,7 @@ Explore the SmartHotel Booking System, a comprehensive showcase illustrating the
 If you find this project useful, please give it a star. Thanks! ⭐
 
 
-## Pattern Used in this project
+## Pattern, C#12 and .NET Core 8 features.
 
 -  **[`Result Pattern`](https://www.milanjovanovic.tech/blog/functional-error-handling-in-dotnet-with-the-result-pattern)** - The " is an alternative to exception-based error handling. Instead of triggering exceptions
 -  **[`Global using`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-directive)** - Global usings make it possible to consolidate repetitive using namespaces into one single file.
