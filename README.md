@@ -8,9 +8,9 @@ If you find this project useful, please give it a star. Thanks! ⭐
 
 
 ## Pattern Used in this project
-🏁 **[`Result Pattern`]([https://dotnet.microsoft.com/download](https://www.milanjovanovic.tech/blog/functional-error-handling-in-dotnet-with-the-result-pattern))** - The "Result Pattern" is an alternative to exception-based error handling. Instead of triggering exceptions
 
-
+-  **[`Result Pattern`](https://www.milanjovanovic.tech/blog/functional-error-handling-in-dotnet-with-the-result-pattern)** - The " is an alternative to exception-based error handling. Instead of triggering exceptions
+-  **[`Global using`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-directive)** - Global usings make it possible to consolidate repetitive using namespaces into one single file.
 ## Architecture
 ![techStack](Doc/archi-diag.jpg)  
 
