@@ -19,6 +19,7 @@
 		<PackageReference Include="Serilog.Sinks.Seq" Version="5.0.1" />
 		<PackageReference Include="MassTransit.RabbitMQ" Version="8.0.16" />
 		<PackageReference Include="MediatR" Version="12.2.0" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.1.2" />
 
 	</ItemGroup>
 
