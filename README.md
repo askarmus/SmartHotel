@@ -1,4 +1,4 @@
-# .NET CORE 8.0 Microservices Clean Architecture Boilerplate
+# SmartHotel : .NET CORE 8.0 Microservices Clean Architecture Boilerplate
 
 ## Overview
 
