@@ -6,7 +6,7 @@ namespace SmartHotel.BookingService.Controllers.v2;
 [ApiController]
 [Authorize]
 [Route("api/v{version:apiversion}/[controller]")]
-public class BookingController(IMediator _mediator, IMapper _mapper, IPublishEndpoint _publishEndpoint, IRequestClient<AvailabilityUpdatedEvent> _client) : ControllerBase
+public class BookingController(IMediator _mediator) : ControllerBase
 {
     [MapToApiVersion("2.0")]
     [HttpGet("GetBooking/{bookingId}")]
@@ -15,37 +15,6 @@ public class BookingController(IMediator _mediator, IMapper _mapper, IPublishEnd
         var result = await _mediator.Send(new GetBookingQuery { BookingId = bookingId });
 
         return Ok(result);
-    }
-
-    [MapToApiVersion("2.0")]
-    [HttpGet("GetBookings")]
-    public async Task<IActionResult> GetBookings(int bookingId)
-    {
-        var result = await _mediator.Send(new GetBookingsQuery { });
-
-        return Ok(result);
-    }
-
-    [MapToApiVersion("2.0")]
-    [HttpPost("CreateBooking")]
-    public async Task<IActionResult> CreateBooking([FromBody] CreateBookingRequest request)
-    {
-        var response = await _client.GetResponse<AvailabilityUpdateResult>(new { request.RoomId, request.BookingDate });
-
-        if (response.Message.AvailabilityStatus != Service.Shared.Enum.AvailabilityStatus.AlreadyBooked)
-        {
-            var bookingCommand = _mapper.Map<CreateBookingCommand>(request);
-            var result = await _mediator.Send(bookingCommand);
-            var bookingCreatedEvent = _mapper.Map<BookingCreatedEvent>(request);
-
-            await _publishEndpoint.Publish(bookingCreatedEvent);
-
-            return Ok(result);
-        }
-        else
-        {
-            return BadRequest(Result<Error>.Failure(BookingErrors.Unavailable(request.BookingDate)));
-        }
     }
 }
 

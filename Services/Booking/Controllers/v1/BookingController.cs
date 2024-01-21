@@ -9,18 +9,10 @@ namespace SmartHotel.BookingService.Controllers.v1
    
     public class BookingController(IMediator _mediator, IMapper _mapper, IPublishEndpoint _publishEndpoint, IRequestClient<AvailabilityUpdatedEvent> _client) : ControllerBase
     {
-        [MapToApiVersion("1.0")]
-        [HttpGet("GetBooking/{bookingId}")]
-        public async Task<IActionResult> GetBooking(int bookingId)
-        {
-            var result = await _mediator.Send(new GetBookingQuery { BookingId = bookingId });
-
-            return Ok(result);
-        }
-
+      
         [MapToApiVersion("1.0")]
         [HttpGet("GetBookings")]
-        public async Task<IActionResult> GetBookings(int bookingId)
+        public async Task<IActionResult> GetBookings()
         {
             var result = await _mediator.Send(new GetBookingsQuery { });
 
