@@ -11,6 +11,7 @@ If you find this project useful, please give it a star. Thanks! ⭐
 
 -  **[`Result Pattern`](https://www.milanjovanovic.tech/blog/functional-error-handling-in-dotnet-with-the-result-pattern)** - The " is an alternative to exception-based error handling. Instead of triggering exceptions
 -  **[`Global using`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-directive)** - Global usings make it possible to consolidate repetitive using namespaces into one single file.
+  -  **[`Global Error Handling`](https://www.milanjovanovic.tech/blog/global-error-handling-in-aspnetcore-8)** - ASP.NET Core 8 introduces a new IExceptionHandler abstraction for managing exceptions
 ## Architecture
 ![techStack](Doc/archi-diag.jpg)  
 
@@ -43,7 +44,7 @@ If you find this project useful, please give it a star. Thanks! ⭐
 **Authentication Service:** Ensures system security by managing user authentication, validating credentials, and providing authentication tokens for secure operations, safeguarding against unauthorized access.
 
 ## ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) Todo Items
-- API version
+- API version ✔️
 - Saga Orchestration using MassTransit
 - Infrastructure project to deploy Azure AKS
 - Reduce a Significant part of code by using Primary Constructors.
