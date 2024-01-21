@@ -43,7 +43,7 @@ If you find this project useful, please give it a star. Thanks! ⭐
 **Authentication Service:** Ensures system security by managing user authentication, validating credentials, and providing authentication tokens for secure operations, safeguarding against unauthorized access.
 
 ## ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) Todo Items
-- API version
+- API version ✔️
 - Saga Orchestration using MassTransit
 - Infrastructure project to deploy Azure AKS
 - Reduce a Significant part of code by using Primary Constructors.
