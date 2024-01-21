@@ -1,11 +1,14 @@
-namespace SmartHotel.BookingService.Controllers;
+﻿using Asp.Versioning;
 
+namespace SmartHotel.BookingService.Controllers.v3;
+
+[ApiVersion("3.0")]
 [ApiController]
 [Authorize]
-[Route("api/[controller]")]
+[Route("api/v{version:apiversion}/[controller]")]
 public class BookingController(IMediator _mediator, IMapper _mapper, IPublishEndpoint _publishEndpoint, IRequestClient<AvailabilityUpdatedEvent> _client) : ControllerBase
 {
-
+    [MapToApiVersion("3.0")]
     [HttpGet("GetBooking/{bookingId}")]
     public async Task<IActionResult> GetBooking(int bookingId)
     {
@@ -14,6 +17,7 @@ public class BookingController(IMediator _mediator, IMapper _mapper, IPublishEnd
         return Ok(result);
     }
 
+    [MapToApiVersion("3.0")]
     [HttpGet("GetBookings")]
     public async Task<IActionResult> GetBookings(int bookingId)
     {
@@ -22,6 +26,7 @@ public class BookingController(IMediator _mediator, IMapper _mapper, IPublishEnd
         return Ok(result);
     }
 
+    [MapToApiVersion("3.0")]
     [HttpPost("CreateBooking")]
     public async Task<IActionResult> CreateBooking([FromBody] CreateBookingRequest request)
     {
@@ -43,4 +48,4 @@ public class BookingController(IMediator _mediator, IMapper _mapper, IPublishEnd
         }
     }
 }
-    
+

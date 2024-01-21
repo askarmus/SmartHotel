@@ -6,7 +6,7 @@
 
     //Booking
     {
-      "UpstreamPathTemplate": "/api/Booking/CreateBooking",
+      "UpstreamPathTemplate": "/api/v1/Booking/CreateBooking",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -15,10 +15,10 @@
           "Port": 5081
         }
       ],
-      "DownstreamPathTemplate": "/api/Booking/CreateBooking"
+      "DownstreamPathTemplate": "/api/v1/Booking/CreateBooking"
     },
     {
-      "UpstreamPathTemplate": "/api/Booking/GetBooking/{bookingId}",
+      "UpstreamPathTemplate": "/api/v2/Booking/GetBooking/{bookingId}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -27,10 +27,10 @@
           "Port": 5081
         }
       ],
-      "DownstreamPathTemplate": "/api/Booking/GetBookings"
+      "DownstreamPathTemplate": "/api/v2/Booking/GetBookings"
     },
     {
-      "UpstreamPathTemplate": "/api/Booking/GetBookings",
+      "UpstreamPathTemplate": "/api/v1/Booking/GetBookings",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -39,7 +39,7 @@
           "Port": 5081
         }
       ],
-      "DownstreamPathTemplate": "/api/Booking/GetBookings"
+      "DownstreamPathTemplate": "/api/v1/Booking/GetBookings"
     },
     
     //Room
