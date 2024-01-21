@@ -21,7 +21,7 @@ public class UsersController : ControllerBase
         return Ok(await _mediator.Send(new LoginQuery(request.UserName, request.Password)));
     }
 
-    [HttpPost("register")]
+    [HttpPost("Register")]
     public async Task<ActionResult> Register(RegisterRequest request)
     {
         await _mediator.Send(new RegisterUserCommand(request.UserName, request.Password, request.Name, request.Password));

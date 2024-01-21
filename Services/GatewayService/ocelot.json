@@ -104,7 +104,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5245
+          "Port": 5134
         }
       ],
       "DownstreamPathTemplate": "/api/Payment/ProcessPayment"

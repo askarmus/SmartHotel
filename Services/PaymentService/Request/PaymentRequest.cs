@@ -1,4 +1,4 @@
-﻿namespace FakePaymentGatewayService;
+﻿namespace SmartHotel.PaymentService.Request;
 
 public class PaymentRequest
 {

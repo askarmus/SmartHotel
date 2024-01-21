@@ -1,16 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
+using Service.Shared.Enum;
+using SmartHotel.PaymentService.Request;
+using SmartHotel.PaymentService.Response;
 
-namespace FakePaymentGatewayService.Controllers;
+namespace SmartHotel.PaymentService.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 public class PaymentController : ControllerBase
 {
-    public enum PaymentStatus
-    {
-        Success,
-        Declined
-    }
 
     [HttpPost("Process")]
     public async Task<IActionResult> Process([FromBody] PaymentRequest request)
