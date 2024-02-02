@@ -14,6 +14,8 @@ If you find this project useful, please give it a star. Thanks! ⭐
   -  **[`Global Error Handling`](https://www.milanjovanovic.tech/blog/global-error-handling-in-aspnetcore-8)** - ASP.NET Core 8 introduces a new IExceptionHandler abstraction for managing exceptions
 
  -  **[`Options Pattern`](https://learn.microsoft.com/en-us/dotnet/core/extensions/options)** - The options pattern uses classes to provide strongly-typed access to groups of related settings
+ -  Using Separate Read/Write Models with EF Core and CQRS
+
    
 
 ## Architecture
