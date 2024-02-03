@@ -9,13 +9,21 @@ If you find this project useful, please give it a star. Thanks! ⭐
 
 ## Pattern, C#12 and .NET Core 8 features.
 
--  **[`Result Pattern`](https://www.milanjovanovic.tech/blog/functional-error-handling-in-dotnet-with-the-result-pattern)** - The " is an alternative to exception-based error handling. Instead of triggering exceptions
--  **[`Global using`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-directive)** - Global usings make it possible to consolidate repetitive using namespaces into one single file.
-  -  **[`Global Error Handling`](https://www.milanjovanovic.tech/blog/global-error-handling-in-aspnetcore-8)** - ASP.NET Core 8 introduces a new IExceptionHandler abstraction for managing exceptions
+|   |    |   |
+|---|---|---|
+| Built on .NET 8.0  |Follows Clean Architecture Principles   | Docker-Compose File Examples  |
+| Global Error Handling  |Uses Entity Framework Core as DB Abstraction   |Global using |
+| Fluent Validation and a Validation Pipeline Behaviour on top of MediatR  |JWT Authentication   |CQRS implementation with MediatR library |
+|API Versioning  |Uses Entity Framework Core as DB Abstraction   |Minimal API for all endpoints. |
+|Rabbitmq on top of MassTranit for Event Driven Architecture between our microservices.  |Health Check for reporting the health of app infrastructure components.   |Ocelot as a microservices gateway. |
+ 
 
- -  **[`Options Pattern`](https://learn.microsoft.com/en-us/dotnet/core/extensions/options)** - The options pattern uses classes to provide strongly-typed access to groups of related settings
- -  Using Separate Read/Write Models with EF Core and CQRS
 
+
+
+
+ 
+ 
    
 
 ## Architecture
