@@ -10,38 +10,29 @@ using SmartHotel.Infrastructure.Behaviors;
 using Persistance.Repository;
 using SmartHotel.BookingService.Persistance;
 using Asp.Versioning;
-using Microsoft.Extensions.Options;
-using SmartHotel.BookingService.Swagger;
-using Swashbuckle.AspNetCore.SwaggerGen;
+
 
 var builder = WebApplication.CreateBuilder(args);
- 
+
 builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
-builder.Services.AddSwaggerGen(options =>
+builder.Services.AddApiVersioning(options =>
 {
-    // Add a custom operation filter which sets default values
-    options.OperationFilter<SwaggerDefaultValues>();
-});
-
-builder.Services.AddApiVersioning(opt =>
+    options.DefaultApiVersion = new ApiVersion(1);
+    options.ReportApiVersions = true;
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.ApiVersionReader = ApiVersionReader.Combine(
+        new UrlSegmentApiVersionReader(),
+        new QueryStringApiVersionReader(),
+        new HeaderApiVersionReader("X-Api-Version"));
+}).AddApiExplorer(options =>
 {
-    opt.DefaultApiVersion = new ApiVersion(1, 0);
-    opt.AssumeDefaultVersionWhenUnspecified = true;
-    opt.ReportApiVersions = true;
-    opt.ApiVersionReader = new UrlSegmentApiVersionReader();
+    options.GroupNameFormat = "'v'V";
+    options.SubstituteApiVersionInUrl = true;
 });
-
-builder.Services
-    .AddApiVersioning()
-    .AddApiExplorer(options =>
-    {
-        options.GroupNameFormat = "'v'VVV";
-        options.SubstituteApiVersionInUrl = true;
-    });
 
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddRouting(x => x.LowercaseUrls = true);
@@ -68,23 +59,11 @@ var app = builder.Build();
 
 app.UseMiddleware<ExceptionLoggingMiddleware>();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        var descriptions = app.DescribeApiVersions();
+app.UseSwagger();
 
-        // Build a swagger endpoint for each discovered API version
-        foreach (var description in descriptions)
-        {
-            var url = $"/swagger/{description.GroupName}/swagger.json";
-            var name = description.GroupName.ToUpperInvariant();
-            options.SwaggerEndpoint(url, name);
-        }
-    });
-}
 app.UseAuthorization();
 app.MapControllers();
+app.MapBookingEndpoints();
+app.UseSwaggerUI();
+
 app.Run();
