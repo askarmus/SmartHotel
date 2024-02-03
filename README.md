@@ -70,7 +70,7 @@ If you have any questions or need further assistance, please contact the project
 
 ## Contributing
 
-I want you to know that contributions to this project are welcome. Please open an issue or submit a pull request if you have any ideas, bug fixes, or improvements.  
+Feel free to contribute to this project! Share your ideas, bug fixes, or improvements by opening an issue or submitting a pull request. Your input is valuable and helps enhance the project.
 
 ## License
 
