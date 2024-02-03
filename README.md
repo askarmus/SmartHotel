@@ -33,18 +33,18 @@ If you find this project useful, please give it a star. Thanks! ⭐
 ## :hearts: Technical stacks
 
 
-- ✔️ **[`.NET Core 8`](https://dotnet.microsoft.com/download)** - .NET Framework and .NET Core, including ASP.NET and ASP.NET Core
-- ✔️ **[`MediatR`](https://github.com/jbogard/MediatR)** - Simple, unambitious mediator implementation in .NET
-- ✔️ **[`FluentValidation`](https://github.com/FluentValidation/FluentValidation)** - Popular .NET validation library for building strongly-typed validation rules
-- ✔️ **[`serilog`](https://github.com/serilog/serilog)** - Simple .NET logging with fully-structured events
-- ✔️ **[`Ocelot`](https://github.com/ThreeMammals/Ocelot)** - Ocelot is an open-source API Gateway, designed for microservices architecture.
-- ✔️ **[`AutoMapper`](https://automapper.org/)** - AutoMapper is a simple library that helps us to transform one object type into another.
-- ✔️ **[`EF Core`](https://github.com/dotnet/efcore)** - Modern object-database mapper for .NET. It supports LINQ queries, change tracking, updates, and schema migrations
-- ✔️ **[`Polly`](https://github.com/App-vNext/Polly)** - Polly is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner
-- ✔️ **[`RabbitMQ`](https://automapper.org)** - RabbitMQ is an open-source message-broker
-- ✔️ **[`MassTransit`](https://masstransit.io/)** - MassTransit provides a developer-focused, modern platform for creating distributed applications without complexity.
-- ✔️ **[`Mog`](https://github.com/devlooped/moq)** - The most popular and friendly mocking library for .NET.
-- ✔️ **[`NUite`](https://nunit.org/)** - NUnit is a unit-testing framework for all .Net languages.
+- ❇️ **[`.NET Core 8`](https://dotnet.microsoft.com/download)** - .NET Framework and .NET Core, including ASP.NET and ASP.NET Core
+- ❇️ **[`MediatR`](https://github.com/jbogard/MediatR)** - Simple, unambitious mediator implementation in .NET
+- ❇️ **[`FluentValidation`](https://github.com/FluentValidation/FluentValidation)** - Popular .NET validation library for building strongly-typed validation rules
+- ❇️ **[`serilog`](https://github.com/serilog/serilog)** - Simple .NET logging with fully-structured events
+- ❇️ **[`Ocelot`](https://github.com/ThreeMammals/Ocelot)** - Ocelot is an open-source API Gateway, designed for microservices architecture.
+- ❇️ **[`AutoMapper`](https://automapper.org/)** - AutoMapper is a simple library that helps us to transform one object type into another.
+- ❇️ **[`EF Core`](https://github.com/dotnet/efcore)** - Modern object-database mapper for .NET. It supports LINQ queries, change tracking, updates, and schema migrations
+- ❇️ **[`Polly`](https://github.com/App-vNext/Polly)** - Polly is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner
+- ❇️ **[`RabbitMQ`](https://automapper.org)** - RabbitMQ is an open-source message-broker
+- ❇️ **[`MassTransit`](https://masstransit.io/)** - MassTransit provides a developer-focused, modern platform for creating distributed applications without complexity.
+- ❇️ **[`Mog`](https://github.com/devlooped/moq)** - The most popular and friendly mocking library for .NET.
+- ❇️ **[`NUite`](https://nunit.org/)** - NUnit is a unit-testing framework for all .Net languages.
 
 ![techStack](Assets/techStack.png)  
 
