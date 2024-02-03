@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "32fd447f-fb79-4926-bdfc-5460f3ed39d5",
+		"name": "Smart Hotel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5138380",
+		"_collection_link": "https://planetary-crescent-214601.postman.co/workspace/Microservice-Shop~6565dcd7-1f39-4a5e-8000-21b6b6179109/collection/5138380-32fd447f-fb79-4926-bdfc-5460f3ed39d5?action=share&source=collection_link&creator=5138380"
+	},
+	"item": [
+		{
+			"name": "Room Availability by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYXNrYXJtdXNAaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiVXNlcklkIjoiM2QyZmI3N2MtOWU2Ny00YjIxLWE1ZmItMTliMzhlMGY1Nzk0IiwiZXhwIjoxNzg5Nzk1MTU4LCJpc3MiOiJNb2R1bGFyTW9ub2xpdGguY29tIiwiYXVkIjoiTW9kdWxhck1vbm9saXRoLmNvbSJ9.xkLfi-BBflOcVCkKYN6i2Nt-qsgiJ68DP43VsTI3M84",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5267/api/RoomAvailability/GetRoomAvailability/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5267",
+					"path": [
+						"api",
+						"RoomAvailability",
+						"GetRoomAvailability",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Room Availabilities",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYXNrYXJtdXNAaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiVXNlcklkIjoiM2QyZmI3N2MtOWU2Ny00YjIxLWE1ZmItMTliMzhlMGY1Nzk0IiwiZXhwIjoxNzg5Nzk1MTU4LCJpc3MiOiJNb2R1bGFyTW9ub2xpdGguY29tIiwiYXVkIjoiTW9kdWxhck1vbm9saXRoLmNvbSJ9.xkLfi-BBflOcVCkKYN6i2Nt-qsgiJ68DP43VsTI3M84",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5267/api/RoomAvailability/GetRoomAvailability/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5267",
+					"path": [
+						"api",
+						"RoomAvailability",
+						"GetRoomAvailability",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\" : \"askarmus@hotmail.com\",\r\n    \"Password\" : \"Hello@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5267/api/users/logIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5267",
+					"path": [
+						"api",
+						"users",
+						"logIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Booking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYXNrYXJtdXNAaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiVXNlcklkIjoiM2QyZmI3N2MtOWU2Ny00YjIxLWE1ZmItMTliMzhlMGY1Nzk0IiwiZXhwIjoxNzg5Nzk1MTU4LCJpc3MiOiJNb2R1bGFyTW9ub2xpdGguY29tIiwiYXVkIjoiTW9kdWxhck1vbm9saXRoLmNvbSJ9.xkLfi-BBflOcVCkKYN6i2Nt-qsgiJ68DP43VsTI3M84",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserId\" : 1,\r\n    \"RoomId\" : 1,\r\n    \"CreditCardNumber\":\"212154545\",\r\n    \"CheckInDate\" : \"2019-01-06T17:16:40\",\r\n    \"CheckOutDate\" : \"2019-01-06T17:16:40\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5267/api/booking/createbooking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5267",
+					"path": [
+						"api",
+						"booking",
+						"createbooking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Booking By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYXNrYXJtdXNAaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiVXNlcklkIjoiM2QyZmI3N2MtOWU2Ny00YjIxLWE1ZmItMTliMzhlMGY1Nzk0IiwiZXhwIjoxNzg5Nzk1MTU4LCJpc3MiOiJNb2R1bGFyTW9ub2xpdGguY29tIiwiYXVkIjoiTW9kdWxhck1vbm9saXRoLmNvbSJ9.xkLfi-BBflOcVCkKYN6i2Nt-qsgiJ68DP43VsTI3M84",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5081/api/booking/getBooking/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5081",
+					"path": [
+						"api",
+						"booking",
+						"getBooking",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bookings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYXNrYXJtdXNAaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiVXNlcklkIjoiM2QyZmI3N2MtOWU2Ny00YjIxLWE1ZmItMTliMzhlMGY1Nzk0IiwiZXhwIjoxNzg5Nzk1MTU4LCJpc3MiOiJNb2R1bGFyTW9ub2xpdGguY29tIiwiYXVkIjoiTW9kdWxhck1vbm9saXRoLmNvbSJ9.xkLfi-BBflOcVCkKYN6i2Nt-qsgiJ68DP43VsTI3M84",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5267/api/v2/booking/getBookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5267",
+					"path": [
+						"api",
+						"v2",
+						"booking",
+						"getBookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "External Payment Gateway Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYXNrYXJtdXNAaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiVXNlcklkIjoiM2QyZmI3N2MtOWU2Ny00YjIxLWE1ZmItMTliMzhlMGY1Nzk0IiwiZXhwIjoxNzg5Nzk1MTU4LCJpc3MiOiJNb2R1bGFyTW9ub2xpdGguY29tIiwiYXVkIjoiTW9kdWxhck1vbm9saXRoLmNvbSJ9.xkLfi-BBflOcVCkKYN6i2Nt-qsgiJ68DP43VsTI3M84",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CreditCardNumber\" : \"2528586\",\r\n    \"Amount\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5245/api/payment/process",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5245",
+					"path": [
+						"api",
+						"payment",
+						"process"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "jwt",
+		"jwt": [
+			{
+				"key": "secret",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYXNrYXJtdXNAaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiVXNlcklkIjoiM2QyZmI3N2MtOWU2Ny00YjIxLWE1ZmItMTliMzhlMGY1Nzk0IiwiZXhwIjoxNzg5Nzk1MTU4LCJpc3MiOiJNb2R1bGFyTW9ub2xpdGguY29tIiwiYXVkIjoiTW9kdWxhck1vbm9saXRoLmNvbSJ9.xkLfi-BBflOcVCkKYN6i2Nt-qsgiJ68DP43VsTI3M84",
+				"type": "string"
+			},
+			{
+				"key": "algorithm",
+				"value": "HS256",
+				"type": "string"
+			},
+			{
+				"key": "isSecretBase64Encoded",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "payload",
+				"value": "{}",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "headerPrefix",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "queryParamKey",
+				"value": "token",
+				"type": "string"
+			},
+			{
+				"key": "header",
+				"value": "{}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
