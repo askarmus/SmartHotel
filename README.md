@@ -19,7 +19,7 @@ If you find this project useful, please give it a star. Thanks! ⭐
    
 
 ## Architecture
-![techStack](Doc/archi-diag.jpg)  
+![techStack](Assets/archi-diag.jpg)  
 
 
 ## :hearts: Technical stacks
@@ -38,7 +38,7 @@ If you find this project useful, please give it a star. Thanks! ⭐
 - ✔️ **[`Mog`](https://github.com/devlooped/moq)** - The most popular and friendly mocking library for .NET.
 - ✔️ **[`NUite`](https://nunit.org/)** - NUnit is a unit-testing framework for all .Net languages.
 
-![techStack](Doc/techStack.png)  
+![techStack](Assets/techStack.png)  
 
 ## Features
  **Booking Service:**  Manages the booking lifecycle, orchestrates workflows using MassTransit and RabbitMQ, and implements the Saga pattern for state transitions. Collaborates with Payment and Availability Services.
