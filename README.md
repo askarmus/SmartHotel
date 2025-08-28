@@ -27,7 +27,7 @@ If you find this project useful, please give it a star. Thanks! ⭐
    
 
 ## Architecture
-![techStack](https://github.com/askarmus/SmartHotel/blob/master/Assets/archi-diag.jpg)  
+![techStack](https://raw.githubusercontent.com/askarmus/SmartHotel/master/Assets/archi-diag.jpg)  
 
 
 ## :hearts: Technical stacks
